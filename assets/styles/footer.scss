@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+.footer {
+    a {
+        color     : $light;
+        transition: color 0.15s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+}
