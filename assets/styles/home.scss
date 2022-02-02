@@ -1,0 +1,10 @@
+@import "variables.scss";
+
+.actuCard {
+    box-shadow: $shadow-card;
+
+    img {
+        object-fit: cover;
+        max-height: 200px;
+    }
+}

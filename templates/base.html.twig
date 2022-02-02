@@ -20,9 +20,10 @@
 		{% block navbar %}
 			{% include "items/_navbar.html.twig" %}
 		{% endblock %}
-		{% block body %}{% endblock %}
-		{% block footer %}
-			{% include "items/_footer.html.twig" %}
-		{% endblock %}
-	</body>
-</html>
+		<main class="container"> {% block body %}{% endblock %}
+			</main>
+			{% block footer %}
+				{% include "items/_footer.html.twig" %}
+			{% endblock %}
+		</body>
+	</html>

@@ -6,8 +6,13 @@
 	{{ parent() }}
 {% endblock %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
 {% block body %}
-	<main class="">
-		<h1 class="text-secondary">Bienvenue</h1>
-	</main>
+	<h1 class="text-secondary text-center my-3">Bienvenue</h1>
+	<div class="d-flex flex-column align-items-center">
+		{% include "home/components/_actualityCards.html.twig" %}
+	</div>
 {% endblock %}
