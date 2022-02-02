@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
 		<title>
 			{% block title %}Voyage des sens
 			{% endblock %}
 		</title>
-		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
-        
+
 		{{ encore_entry_link_tags('app') }}
 		{% block stylesheets %}{% endblock %}
 
@@ -16,6 +17,9 @@
 		{% endblock %}
 	</head>
 	<body>
+		{% block navbar %}
+			{% include "items/_navbar.html.twig" %}
+		{% endblock %}
 		{% block body %}{% endblock %}
 	</body>
 </html>
