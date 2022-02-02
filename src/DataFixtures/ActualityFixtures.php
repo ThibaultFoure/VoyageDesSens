@@ -18,6 +18,7 @@ class ActualityFixtures extends Fixture
             $actuality = new Actuality();
             $actuality->setTitle('Titre notamment');
             $actuality->setCreatedAt($faker->dateTime());
+            $actuality->setPicture('actu1.jpg');
             $actuality->setContent('GFsgiugizgfiyzifzgheifggzeizgeifuzeityzeoriutvyzert iat oia z to yazg toyzarg toiyzayzgrtazgt azge_tzae_ègt azo_egazgtoazg taz getgaz_egt oazgt');
             $manager->persist($actuality);
         }

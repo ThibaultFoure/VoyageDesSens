@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ActualityRepository;
 
 /**
  * @Route("/actualites", name="actuality_")
@@ -14,9 +15,10 @@ class ActualityController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(): Response
+    public function index(ActualityRepository $actualityRepository): Response
     {
-        return $this->render('actuality/index.html.twig');
+        $actualities = $actualityRepository->findAll();
+        return $this->render('actuality/index.html.twig', ['actualities' => $actualities]);
     }
 
     /**

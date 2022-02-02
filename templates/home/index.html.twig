@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
 {% block title %}
 	Accueil -
 	{{ parent() }}
@@ -13,6 +12,6 @@
 {% block body %}
 	<h1 class="text-secondary text-center my-3">Bienvenue</h1>
 	<div class="d-flex flex-column align-items-center">
-		{% include "home/components/_actualityCards.html.twig" %}
+		{% include "items/_actualityCards.html.twig" %}
 	</div>
 {% endblock %}
