@@ -1,0 +1,19 @@
+@import "variables.scss";
+
+.banner {
+    height    : 400px;
+    width     : 100%;
+    object-fit: cover;
+    filter    : brightness(60%) blur(2px);
+}
+
+.headerText {
+    width       : 800px;
+    position    : absolute;
+    top         : 9em;
+    display     : block;
+    margin-left : 50vw;
+    margin-right: 50vw;
+    transform   : translate(-50%, -50%);
+    text-shadow : 2px 2px 6px rgb(24, 24, 24);
+}
