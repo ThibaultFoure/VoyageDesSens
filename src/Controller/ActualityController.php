@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ActualityRepository;
+use App\Entity\Actuality;
 
 /**
  * @Route("/actualites", name="actuality_")
@@ -24,8 +25,8 @@ class ActualityController extends AbstractController
     /**
      * @Route("/{id}", name="show")
      */
-    public function show(): Response
+    public function show(Actuality $actuality): Response
     {
-        return $this->render('actuality/show.html.twig');
+        return $this->render('actuality/show.html.twig', ['actuality' => $actuality]);
     }
 }

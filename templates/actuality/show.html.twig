@@ -1,2 +1,13 @@
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('actuality') }}
+{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-primary">{{ actuality.title }}</h1>
+	<div class="row d-flex justify-content-around">
+		<img class="col-4" src="{{ vich_uploader_asset(actuality, 'pictureFile') }}" alt="">
+        <p class="col-8">{{ actuality.content }}</p>
+	</div>
+{% endblock %}

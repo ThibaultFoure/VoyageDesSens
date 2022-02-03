@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Actuality{% endblock %}
+{% block title %}Nouvelle activité -
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Actuality</h1>
-
-    {{ include('admin_actuality/_form.html.twig') }}
-
-    <a href="{{ path('admin_actuality_index') }}">back to list</a>
+	<main class="container my-5">
+		<h1 class="text-center text-primary">Nouvelle actualité</h1>
+		{{ include('admin_actuality/_form.html.twig', {'button_label': 'Ajouter'}) }}
+	<a class="btn btn-primary mt-3" href="{{ path('admin_actuality_index') }}"><i class="bi bi-caret-left-square-fill me-2"></i>Retour à la liste</a>	</main>
 {% endblock %}
