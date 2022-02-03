@@ -63,6 +63,7 @@ class Actuality
     public function __construct()
     {
         $this->updatedAt = new DateTimeImmutable();
+        $this->createdAt = new DateTimeImmutable();
     }
 
     /**

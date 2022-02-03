@@ -1,7 +1,10 @@
 @import "variables.scss";
 
 .topHeader {
-    box-shadow: 0px 0px 8px -2px $primary;
+    box-shadow           : 0px 0px 8px -2px $primary;
+    background-image     : url("../images/VDS_Motif_Marigold.svg");
+    background-size      : cover;
+    background-position  : center;
 
     img {
         height: 100px;

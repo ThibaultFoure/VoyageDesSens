@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestations - {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('session') }}
+{% endblock %}
+
+{% block body %}
+{% include "session/_sessionCards.html.twig" %}
+{% endblock %}
