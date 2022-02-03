@@ -4,7 +4,7 @@
 		<div class="col-9 d-flex flex-column">
 			<h5 class="fs-3 m-1">{{ actuality.title }}</h5>
 			<p class="m-1">{{ actuality.content }}</p>
-			<span class="m-1">{{ actuality.createdAt|date() }}</span>
+			<span class="m-1">{{ actuality.createdAt|date("D d M Y") }}</span>
 			<a href="{{ path('actuality_show', {'id': actuality.id}) }}" class="btn btn-primary align-self-end">Voir</a>
 		</div>
 	</div>

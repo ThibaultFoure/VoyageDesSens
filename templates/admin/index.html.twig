@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Administration accueil -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+
+{% block body %}
+
+	<h1 class="text-center my-3 text-primary">Espace administateur</h1>
+	<div class="d-flex flex-column align-items-center justify-content-center">
+		<a class="btn btn-secondary fs-5 w-75 my-3" href="{{ path('admin_actuality_index') }}">Les actualités</a>
+		<a class="btn btn-secondary fs-5 w-75 my-3" href="{{ path('admin_category_index') }}">Les catégories de prestations</a>
+		<a class="btn btn-secondary fs-5 w-75 my-3" href="{{ path('admin_session_index') }}">Les prestations</a>
+	</div>
+{% endblock %}

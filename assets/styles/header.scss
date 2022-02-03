@@ -1,14 +1,16 @@
 @import "variables.scss";
 
 .banner {
-    height    : 400px;
+    height    : 350px;
     width     : 100%;
     object-fit: cover;
-    filter    : brightness(60%) blur(2px);
+    filter    : brightness(55%) blur(2px);
+    box-shadow: 0px 0px 8px -2px black;
+    
 }
 
 .headerText {
-    width       : 800px;
+    width       : 850px;
     position    : absolute;
     top         : 9em;
     display     : block;
