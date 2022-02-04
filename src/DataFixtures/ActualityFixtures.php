@@ -19,7 +19,16 @@ class ActualityFixtures extends Fixture
             $actuality->setTitle('Titre notamment');
             $actuality->setCreatedAt($faker->dateTime());
             $actuality->setPicture('actu2.jpg');
-            $actuality->setContent('GFsgiugizgfiyzifzgheifggzeizgeifuzeityzeoriutvyzert iat oia z to yazg toyzarg toiyzayzgrtazgt azge_tzae_ègt azo_egazgtoazg taz getgaz_egt oazgt');
+            $actuality->setContent('Une nouvelle année pour prendre soin de soi. 
+            ✨S\'arrêter durant un instant et prendre du temps pour soi.
+            ✨Se retrouver et mettre en priorité son bien être.
+            ✨Soulager le stress et les douleurs qui peuvent animer chaque personne au quotidien.
+            ✨Retrouver un équilibre intérieur.
+            ✨S\'écouter, écouter son corps, son esprit. 
+            Vous souhaitez soulager vos troubles, ressentir à nouveau un bien être intérieur ?
+            Venez découvrir la réflexologie combinée, une méthode douce, puissante et sensorielle 🤗.
+            Pour réserver votre séance, contactez moi au 06 32 56 01 27. 
+            Un voyage des sens, à la rencontre du bien-être 🌟');
             $manager->persist($actuality);
         }
 

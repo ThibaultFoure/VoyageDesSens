@@ -6,9 +6,7 @@
 
 {% block body %}
 	<main class="container">
-		<div class="row text-center mb-4 mt-3">
-			<h1 class="mt-3 text-primary">Espace administrateur</h1>
-		</div>
+		<h1 class="my-4 text-center text-primary">Espace administrateur</h1>
 
 		<div class="row">
 			{% if error %}
@@ -34,16 +32,16 @@
 					<input type="password" class="form-control" name="_password" id="password" placeholder="Password">
 					<label for="floatingPassword">Mot de passe</label>
 					{# <p class="text-end">
-											<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
-										</p> #}
+																<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
+															</p> #}
 				</div>
 				<button class="btn btn-secondary col-sm-4 offset-sm-4">Se connecter</button>
 				<input type="hidden" name="_target_path" value="{{ path('admin_index') }}"/>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			</form>
 			{# <p class="text-center">Pas de compte ?
-							<a href="{{ path('app_register') }}">Inscrivez-vous</a>
-						</p> #}
+										<a href="{{ path('app_register') }}">Inscrivez-vous</a>
+									</p> #}
 		</div>
 
 	</main>

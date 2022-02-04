@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact -
-	{{ parent() }}
+{% block body %}
+	<h1 class="text-primary text-center my-4">Contact</h1>
+	<div class="d-flex flex-column flex-lg-row">
+		<div class="col-lg-7">
+			{% include "contact/_form.html.twig" %}
+		</div>
+		<div class="offset-lg-1 bg-primary col-lg-4 mt-lg-0 mt-4 d-flex rounded flex-column p-2">
+			<span class="m-1 text-light fs-5">
+				<i class="bi bi-geo-alt-fill me-3"></i>5 rue Notre Dame, 36400 La Châtre</span>
+			<span class="m-1 text-light fs-5">
+				<i class="bi bi-telephone-fill me-3"></i>06 32 56 01 27</span>
+			<span class="m-1 mb-3 text-light fs-5">
+				<i class="bi bi-envelope-fill me-3"></i>voyagedessens.reflexo@gmail.com</span>
+			<iframe class="w-100 h-100 map align-middle" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=1.9869133830070498%2C46.57922320873007%2C1.9897592067718508%2C46.580530318763195&amp;layer=mapnik&amp;marker=46.57987855483314%2C1.9883384359491174" style="border: 1px solid black"></iframe><br/><small>
+				<a href="https://www.openstreetmap.org/?mlat=46.57988&amp;mlon=1.98834#map=19/46.57988/1.98834">Afficher une carte plus grande</a>
+			</small>
+		</div>
+	</div>
 {% endblock %}
-
-{% block body %}{% endblock %}

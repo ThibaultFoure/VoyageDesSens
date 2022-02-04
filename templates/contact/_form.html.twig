@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div class="bg-white p-2 border border-primary rounded">
+	<div class="row mb-2">
+		<div class="col-md-6">{{ form_row(form.firstname) }}</div>
+		<div class="col-md-6">{{ form_row(form.lastname) }}</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col-md-6">{{ form_row(form.phone) }}</div>
+		<div class="col-md-6">{{ form_row(form.mail) }}</div>
+	</div>
+	{{ form_row(form.message) }}
+	<button class="btn btn-secondary">Envoyer</button>
+</div>
+{{ form_end(form) }}
