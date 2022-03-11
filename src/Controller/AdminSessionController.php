@@ -13,14 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CategoryRepository;
 use App\Entity\Category;
 
-/**
- * @Route("/admin/prestation", name="admin_session_")
- */
+
+#[Route("/admin/prestation", name: "admin_session_")]
+
 class AdminSessionController extends AbstractController
 {
-    /**
-     * @Route("/", name="index", methods={"GET"})
-     */
+
+    #[Route("/", name: "index", methods: ["GET"])]
+
     public function index(CategoryRepository $categoryRepository): Response
     {
         return $this->render('admin_session/index.html.twig', [
@@ -28,9 +28,9 @@ class AdminSessionController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/ajouter/{id}", name="new", methods={"GET", "POST"})
-     */
+
+    #[Route("/ajouter/{id}", name: "new", methods: ["GET", "POST"])]
+
     public function new(
         Request $request,
         Category $category,
@@ -55,9 +55,9 @@ class AdminSessionController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="show", methods={"GET"})
-     */
+
+    #[Route("/{id}", name: "show", methods: ["GET"])]
+
     public function show(Session $session): Response
     {
         return $this->render('admin_session/show.html.twig', [
@@ -65,9 +65,9 @@ class AdminSessionController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}/modifier", name="edit", methods={"GET", "POST"})
-     */
+
+    #[Route("/modifier/{id}", name: "edit", methods: ["GET", "POST"])]
+
     public function edit(Request $request, Session $session, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SessionType::class, $session);
@@ -85,9 +85,9 @@ class AdminSessionController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="delete", methods={"POST"})
-     */
+
+    #[Route("/{id}", name: "delete", methods: ["POST"])]
+
     public function delete(Request $request, Session $session, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $session->getId(), $request->request->get('_token'))) {

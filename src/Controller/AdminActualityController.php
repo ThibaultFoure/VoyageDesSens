@@ -11,14 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/admin/actualites", name="admin_actuality_")
- */
+
+#[Route("/admin/actualites", name: "admin_actuality_")]
+
 class AdminActualityController extends AbstractController
 {
-    /**
-     * @Route("/", name="index", methods={"GET"})
-     */
+
+    #[Route("/", name: "index", methods: ["GET"])]
+
     public function index(ActualityRepository $actualityRepository): Response
     {
         return $this->render('admin_actuality/index.html.twig', [
@@ -26,9 +26,9 @@ class AdminActualityController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/new", name="new", methods={"GET", "POST"})
-     */
+
+    #[Route("/ajouter", name: "new", methods: ["GET", "POST"])]
+
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $actuality = new Actuality();
@@ -48,9 +48,9 @@ class AdminActualityController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="show", methods={"GET"})
-     */
+
+    #[Route("/{id}", name: "show", methods: ["GET"])]
+
     public function show(Actuality $actuality): Response
     {
         return $this->render('admin_actuality/show.html.twig', [
@@ -58,9 +58,9 @@ class AdminActualityController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
-     */
+
+    #[Route("/{id}/modifier", name: "edit", methods: ["GET", "POST"])]
+
     public function edit(Request $request, Actuality $actuality, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ActualityType::class, $actuality);
@@ -78,12 +78,12 @@ class AdminActualityController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="delete", methods={"POST"})
-     */
+
+    #[Route("/{id}", name: "delete", methods: ["POST"])]
+
     public function delete(Request $request, Actuality $actuality, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$actuality->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $actuality->getId(), $request->request->get('_token'))) {
             $entityManager->remove($actuality);
             $entityManager->flush();
         }
