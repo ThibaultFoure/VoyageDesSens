@@ -7,11 +7,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+#[Route("/connexion", name: "login")]
+
 class LoginController extends AbstractController
 {
-    /**
-     * @Route("/connexion", name="login")
-     */
+
+    #[Route("/", name: "")]
+
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();

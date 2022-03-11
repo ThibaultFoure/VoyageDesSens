@@ -9,11 +9,13 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 
+#[Route("/contact", name: "contact")]
+
 class ContactController extends AbstractController
 {
-    /**
-     * @Route("/contact", name="contact")
-     */
+    #[Route("/", name: "")]
+
+
     public function index(Request $request, MailerInterface $mailer)
     {
         $form = $this->createForm(ContactType::class);
