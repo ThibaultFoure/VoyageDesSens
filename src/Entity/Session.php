@@ -5,36 +5,26 @@ namespace App\Entity;
 use App\Repository\SessionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=SessionRepository::class)
- */
+#[ORM\Entity(repositoryClass: SessionRepository::class)]
 class Session
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=120)
-     */
+    #[ORM\Column(type: "string", length: 120)]
     private $title;
 
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     private $description;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="sessions")
-     */
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: "sessions")]
     private $category;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: "integer", nullable: true)]
+
     private $price;
 
     public function getId(): ?int
