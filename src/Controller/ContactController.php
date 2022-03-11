@@ -10,12 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 
 #[Route("/contact", name: "contact")]
-
 class ContactController extends AbstractController
 {
     #[Route("/", name: "")]
-
-
     public function index(Request $request, MailerInterface $mailer)
     {
         $form = $this->createForm(ContactType::class);

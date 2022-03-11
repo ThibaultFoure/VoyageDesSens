@@ -8,12 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route("/", name: "home")]
-
 class HomeController extends AbstractController
 {
 
     #[Route("/", name: "")]
-
     public function index(ActualityRepository $actualityRepository): Response
     {
         $actualities = $actualityRepository->findBy([], ['createdAt' => 'DESC'], 2);

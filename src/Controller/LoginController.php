@@ -8,12 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 #[Route("/connexion", name: "login")]
-
 class LoginController extends AbstractController
 {
 
     #[Route("/", name: "")]
-
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();

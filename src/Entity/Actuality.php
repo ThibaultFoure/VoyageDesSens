@@ -10,55 +10,36 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
-/**
- * @ORM\Entity(repositoryClass=ActualityRepository::class)
- * @Vich\Uploadable
- */
+
+#[ORM\Entity(repositoryClass: ActualityRepository::class)]
+#[Vich\Uploadable]
+
 class Actuality
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private int $id;
 
-    /**
-     * @ORM\Column(type="string", length=120)
-     */
+    #[ORM\Column(type: "string", length: 120)]
     private ?string $title;
 
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     private ?string $content;
 
-    /**
-     * @ORM\Column(type="date")
-     */
+    #[ORM\Column(type: "date")]
     private ?\DateTimeInterface $createdAt;
 
-    /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="picture")
-     * @Assert\File(
-     * maxSize = "1M",
-     * mimeTypes = {"image/jpeg", "image/png", "image/jpg"},
-     * )
-     * @var File|null
-     */
-    private $pictureFile;
+    #[Vich\UploadableField(mapping: "images", fileNameProperty: "picture")]
+    #[Assert\File(maxSize: "1M", mimeTypes: ["image/jpeg", "image/png", "image/jpg"])]
+    private ?\Symfony\Component\HttpFoundation\File\File $pictureFile = null;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(type: "string", length: 255, nullable: true)]
     private $picture;
 
-    /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTimeInterface|null
-     */
-    private ?DateTimeInterface $updatedAt;
-
+    #[ORM\Column(type: "datetime")]
+    private ?DateTimeInterface $updatedAt = null;
 
     public function __construct()
     {
