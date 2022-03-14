@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: ActualityRepository::class)]
 #[Vich\Uploadable]
-
 class Actuality
 {
 
@@ -47,9 +46,6 @@ class Actuality
         $this->createdAt = new DateTimeImmutable();
     }
 
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $pictureFile
-     */
     public function setPictureFile(?File $pictureFile = null): void
     {
         $this->pictureFile = $pictureFile;
