@@ -7,31 +7,24 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=CategoryRepository::class)
- */
+
+#[ORM\Entity(repositoryClass: CategoryRepository::class)]
+
 class Category
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=120)
-     */
+    #[ORM\Column(type: "string", length: 120)]
     private $title;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Session::class, mappedBy="category")
-     */
+    #[ORM\OneToMany(targetEntity: Session::class, mappedBy: "category")]
     private $sessions;
 
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
+    #[ORM\Column(type: "text", nullable: true)]
     private $description;
 
     public function __construct()
@@ -76,11 +69,9 @@ class Category
 
     public function removeSession(Session $session): self
     {
-        if ($this->sessions->removeElement($session)) {
-            // set the owning side to null (unless already changed)
-            if ($session->getCategory() === $this) {
-                $session->setCategory(null);
-            }
+        // set the owning side to null (unless already changed)
+        if ($this->sessions->removeElement($session) && $session->getCategory() === $this) {
+            $session->setCategory(null);
         }
 
         return $this;

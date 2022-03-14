@@ -8,23 +8,19 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ActualityRepository;
 use App\Entity\Actuality;
 
-/**
- * @Route("/actualites", name="actuality_")
- */
+
+#[Route("/actualites", name: "actuality_")]
 class ActualityController extends AbstractController
 {
-    /**
-     * @Route("/", name="index")
-     */
+
+    #[Route("/", name: "index")]
     public function index(ActualityRepository $actualityRepository): Response
     {
         $actualities = $actualityRepository->findAll();
         return $this->render('actuality/index.html.twig', ['actualities' => $actualities]);
     }
 
-    /**
-     * @Route("/{id}", name="show")
-     */
+    #[Route("/{id}", name: "show")]
     public function show(Actuality $actuality): Response
     {
         return $this->render('actuality/show.html.twig', ['actuality' => $actuality]);

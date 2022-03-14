@@ -7,14 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/prestations", name="session_")
- */
+
+#[Route("/prestations", name: "session_")]
 class SessionController extends AbstractController
 {
-    /**
-     * @Route("/", name="index")
-     */
+
+    #[Route("/", name: "index")]
     public function index(CategoryRepository $categoryRepository): Response
     {
         return $this->render('session/index.html.twig', [
