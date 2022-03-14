@@ -1,4 +1,6 @@
 vich_uploader:
+  metadata:
+    type: attribute
   db_driver: orm
   mappings:
     images:
