@@ -1,12 +1,12 @@
 @import "variables.scss";
 
 .banner {
-    height    : 350px;
-    width     : 100%;
-    object-fit: cover;
-    filter    : brightness(55%) blur(2px);
-    box-shadow: 0px 0px 8px -2px black;
-    
+    height         : 400px;
+    width          : 100%;
+    object-fit     : cover;
+    object-position: 50% 30%;
+    // filter         : hsl(15, 66%, 32%);
+    box-shadow     : 0px 0px 8px -2px black;
 }
 
 .headerText {

@@ -5,9 +5,9 @@
 @import "footer.scss";
 
 body {
-    background-color: $light;
-    background-image: url("../images/VDS_Motif_Marigold.svg");
-    background-size: cover;
+    background-color     : $light;
+    background-image     : url("../images/VDS_Motif_Marigold.svg");
+    background-size      : cover;
     background-attachment: fixed;
 }
 
@@ -20,4 +20,10 @@ h6,
 span,
 div {
     font-family: $font;
+}
+
+.pageTitle {
+    background-color: rgba(255, 255, 255, 0.644);
+    backdrop-filter : blur(10px);
+    box-shadow      : 2px 2px 6px -2px $primary;
 }

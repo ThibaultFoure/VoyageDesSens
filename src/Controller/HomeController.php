@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     #[Route("/", name: "")]
     public function index(ActualityRepository $actualityRepository): Response
     {
-        $actualities = $actualityRepository->findBy([], ['createdAt' => 'DESC'], 2);
+        $actualities = $actualityRepository->findBy([], ['createdAt' => 'DESC'], 3);
         return $this->render('home/index.html.twig', ['actualities' => $actualities]);
     }
 }
