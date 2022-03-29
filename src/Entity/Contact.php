@@ -26,6 +26,9 @@ class Contact
     #[ORM\Column(type: "string", length: 255)]
     private $mail;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $reason;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Contact
     public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getReason(): ?string
+    {
+        return $this->reason;
+    }
+
+    public function setReason(string $reason): self
+    {
+        $this->reason = $reason;
 
         return $this;
     }
