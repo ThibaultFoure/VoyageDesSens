@@ -1,15 +1,19 @@
 {{ form_start(form) }}
-<div class="bg-white p-2 border border-primary rounded">
+<div class="bg-white p-4 border border-secondary rounded">
 	<div class="row mb-2">
-		<div class="col-md-6">{{ form_row(form.firstname) }}</div>
-		<div class="col-md-6">{{ form_row(form.lastname) }}</div>
+		<i class="bi bi-person col-md-1 mb-2 fs-3 text-primary text-center p-0"></i>
+		<div class="col-md-5 ps-0">{{ form_row(form.firstname) }}</div>
+		{# <i class="col-md-1"></i> #}
+		<div class="col-md-6 ps-0">{{ form_row(form.lastname) }}</div>
 	</div>
-	<div class="row mb-2">
-		<div class="col-md-6">{{ form_row(form.phone) }}</div>
-		<div class="col-md-6">{{ form_row(form.mail) }}</div>
+	<div class="row mb-2 d-flex align-items-center">
+		<i class="bi bi-telephone col-md-1 mb-2 fs-4 text-primary text-center p-0"></i>
+		<div class="col-md-5 ps-0">{{ form_row(form.phone) }}</div>
+		<i class="bi bi-envelope col-md-1 mb-2 fs-4 text-primary text-center p-0"></i>
+		<div class="col-md-5 ps-0">{{ form_row(form.mail) }}</div>
 	</div>
 	{{ form_row(form.reason) }}
 	{{ form_row(form.message) }}
-	<button class="btn btn-secondary">Envoyer</button>
+	<button class="btn btn-primary">Envoyer</button>
 </div>
 {{ form_end(form) }}

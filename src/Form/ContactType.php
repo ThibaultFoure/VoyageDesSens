@@ -16,22 +16,37 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
-                'label' => 'Votre prénom'
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Votre prénom',
+                ],
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Votre nom'
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Votre nom',
+                ],
             ])
             ->add('phone', TextType::class, [
-                'label' => 'Téléphone'
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Téléphone',
+                ],
             ])
             ->add('mail', EmailType::class, [
-                'label' => 'Adresse mail'
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Adresse mail',
+                ],
             ])
             ->add('message', TextareaType::class, [
                 'attr' => ['rows' => 6],
             ])
             ->add('reason', ChoiceType::class, [
                 'label' => 'Sujet de votre message',
+                'attr' => [
+                    'placeholder' => 'Sujet de votre message',
+                ],
                 'choices' => [
                     'Veuillez sélectionner un sujet' => 'Veuillez sélectionner un sujet',
                     'Demande de renseignement' => 'Demande de renseignements',
