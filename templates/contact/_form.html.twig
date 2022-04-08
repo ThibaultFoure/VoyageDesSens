@@ -1,19 +1,42 @@
 {{ form_start(form) }}
-<div class="bg-white p-4 border border-secondary rounded">
-	<div class="row mb-2">
-		<i class="bi bi-person col-md-1 mb-2 fs-3 text-primary text-center p-0"></i>
-		<div class="col-md-5 ps-0">{{ form_row(form.firstname) }}</div>
-		{# <i class="col-md-1"></i> #}
-		<div class="col-md-6 ps-0">{{ form_row(form.lastname) }}</div>
+<div class="contactElement bg-white p-4 rounded">
+	<div class="row mb-3">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text p-2 pt-1 pb-1 bg-primary">
+					<i class="bi bi-person fs-4 text-white text-center p-0"></i>
+				</span>
+			</div>
+			{{ form_widget(form.firstname) }}
+			{{ form_widget(form.lastname) }}
+		</div>
 	</div>
-	<div class="row mb-2 d-flex align-items-center">
-		<i class="bi bi-telephone col-md-1 mb-2 fs-4 text-primary text-center p-0"></i>
-		<div class="col-md-5 ps-0">{{ form_row(form.phone) }}</div>
-		<i class="bi bi-envelope col-md-1 mb-2 fs-4 text-primary text-center p-0"></i>
-		<div class="col-md-5 ps-0">{{ form_row(form.mail) }}</div>
+	<div class="row mb-2 align-items-center justify-content-between">
+		<div class="mb-3">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text p-2 pt-1 pb-1 bg-primary">
+						<i class="bi bi-telephone fs-4 text-white text-center p-0"></i>
+					</span>
+				</div>
+				{{ form_widget(form.phone) }}
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text p-2 pt-1 pb-1 bg-primary">
+						<i class="bi bi-envelope fs-4 text-white text-center p-0"></i>
+					</span>
+				</div>
+				{{ form_widget(form.mail) }}
+			</div>
+		</div>
 	</div>
 	{{ form_row(form.reason) }}
 	{{ form_row(form.message) }}
-	<button class="btn btn-primary">Envoyer</button>
+	<div class="row justify-content-end m-0">
+		<button class="btn btn-primary col-2">Envoyer</button>
+	</div>
 </div>
 {{ form_end(form) }}

@@ -37,6 +37,7 @@ class ContactType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Adresse mail',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('message', TextareaType::class, [

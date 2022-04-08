@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-$light: #fffdf9;
-$primary: #89381c;
+$light    : #fffdf9;
+$primary  : #89381c;
 $secondary: #E9A13E;
 $text-size: 1.05rem;
-$font: 'Montserrat', sans-serif;
+$font     : 'Montserrat',
+sans-serif;
 $shadow-card: 4px 4px 4px rgb(211, 211, 211);
 $line-height: 40px;
+$spacing    : 4px;
+$spacing2   : 2 * 4px;
+$spacing3   : 3 * 4px;
+$spacing4   : 4 * 4px;
+$spacing5   : 5 * 4px;

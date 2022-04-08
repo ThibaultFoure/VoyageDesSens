@@ -22,11 +22,11 @@ class ContactController extends AbstractController
 
             $contactFormData = $form->getData();
             $message = (new Email())
-                ->from($contactFormData['email'])
+                ->from($contactFormData['mail'])
                 ->to('ton@gmail.com')
                 ->subject('vous avez reçu un email')
                 ->text(
-                    'Sender : ' . $contactFormData['email'] . \PHP_EOL .
+                    'Sender : ' . $contactFormData['mail'] . \PHP_EOL .
                         $contactFormData['Message'],
                     'text/plain'
                 );
