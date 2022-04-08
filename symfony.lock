@@ -123,9 +123,6 @@
     "phpstan/phpdoc-parser": {
         "version": "1.2.0"
     },
-    "phpstan/phpstan": {
-        "version": "1.4.9"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -140,9 +137,6 @@
     },
     "psr/log": {
         "version": "1.1.4"
-    },
-    "rector/rector": {
-        "version": "0.12.17"
     },
     "sensio/framework-extra-bundle": {
         "version": "6.2",

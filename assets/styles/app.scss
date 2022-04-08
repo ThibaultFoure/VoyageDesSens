@@ -25,5 +25,5 @@ div {
 .pageTitle {
     background-color: rgba(255, 255, 255, 0.644);
     backdrop-filter : blur(10px);
-    box-shadow      : 2px 2px 6px -2px $primary;
+    border-block-end: 3px solid $secondary;
 }
