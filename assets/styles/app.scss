@@ -22,8 +22,11 @@ div {
     font-family: $font;
 }
 
+h1 {
+    width: fit-content;
+}
+
 .pageTitle {
-    background-color: rgba(255, 255, 255, 0.644);
-    backdrop-filter : blur(10px);
+    backdrop-filter : blur(7px);
     border-block-end: 3px solid $secondary;
 }
