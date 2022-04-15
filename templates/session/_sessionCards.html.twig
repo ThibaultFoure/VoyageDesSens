@@ -1,6 +1,6 @@
 <div class="sessionsBody d-flex flex-column gap-5">
 	{% for category in categories %}
-		<div class="row justify-content-start bg-light rounded p-2 border border-primary">
+		<div class="row justify-content-start bg-light rounded p-2 border border-primary m-0">
 			<h2 class="categoryTitle text-primary pb-2">{{category.title }}</h2>
 			<p class="ms-3 pt-2">{{ category.description|nl2br }}</p>
 			{% if category.sessions is defined %}
