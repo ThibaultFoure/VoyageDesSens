@@ -1,5 +1,12 @@
 @import "variables.scss";
 
 .categoryTitle {
-    border-bottom: 4px solid $secondary;
+    border-bottom: 1px solid $secondary;
+    width: fit-content;
+}
+
+.sessionsMain {
+    box-shadow   : $shadow-card;
+    border       : 4px solid $secondary;
+    border-radius: $spacing;
 }
