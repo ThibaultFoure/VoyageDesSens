@@ -1,26 +1,23 @@
-<nav class="navbar navbar-expand-lg bg-secondary sticky-top p-0 d-flex flex-column">
+<nav class="navbar navbar-expand-lg bg-secondary navbar-light sticky-top p-0 d-flex flex-column">
 	<div class="topHeader bg-primary d-flex justify-content-center align-items-center p-3 w-100">
 		<img class="logoText mx-3" src="{{ asset('build/images/VDS_Horizontal_Complet_Marigold.png') }}" alt="Logo et texte header"/>
 		<div class="navbarText d-none d-lg-flex flex-column">
 			<span class="text-light fs-3 mx-3">Jennifer Quenault</span>
-			<span class="text-light fs-5 mx-3"><i>Réflexologue</i></span>
+			<span class="text-light fs-5 mx-3">
+				<i>Réflexologue</i>
+			</span>
 		</div>
 	</div>
-	<div class="align-self-start align-self-lg-center">
+	<div class="container-fluid justify-content-end">
 		<button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<div class="navbar-nav">
-				<a class="nav-link fs-5 ms-1" href="{{ path('home') }}">Accueil</a>
-				<a class="nav-link fs-5 ms-1" href="{{ path('journey') }}">Mon parcours</a>
-				<a class="nav-link fs-5 ms-1" href="#">Réflexologie</a>
-				<a class="nav-link fs-5 ms-1" href="{{ path('session_index') }}">Prestations</a>
-				<a class="nav-link fs-5 ms-1" href="#">Tarifs</a>
-				<a class="nav-link fs-5 ms-1" href="#">Offrir</a>
-				<a class="nav-link fs-5 ms-1" href="{{ path('contact') }}">Contact</a>
-				<a class="nav-link fs-5 ms-1" href="{{ path('actuality_index') }}">Actualités</a>
-			</div>
+		<div class="collapse navbar-nav navbar-collapse align-items-end justify-content-lg-center" id="navbarSupportedContent">
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('home') }}">Accueil</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('presentation') }}">Présentation</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('session_index') }}">Prestations</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="#">Tarifs</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('contact') }}">Contact</a>
 		</div>
 	</div>
 </nav>

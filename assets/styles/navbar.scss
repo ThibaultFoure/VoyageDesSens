@@ -15,7 +15,9 @@
         }
     }
 
-    div div .navbar-nav .nav-link {
+    div .navbar-nav .nav-link {
+        color           : $primary;
+
         &:hover {
             color           : $secondary;
             background-color: $primary;
