@@ -5,4 +5,15 @@
 	{{ parent() }}
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('presentation') }}
+{% endblock %}
+
+{% block body %}
+	<h1 class="pageTitle text-primary my-5 fs-1">Présentation</h1>
+	<section>
+		{% include "presentation/_myJourney.html.twig" %}
+		<h2>La réflexologie</h2>
+		{% include "presentation/_reflexology.html.twig" %}
+	</section>
+{% endblock %}
