@@ -1,5 +1,5 @@
 {% for actuality in actualities %}
-	<div class="actuCard row d-flex flex-column flex-lg-row my-3 rounded border border-primary bg-light w-100">
+	<div class="actuCard row flex-column flex-lg-row my-3 rounded border border-primary bg-light w-100">
 		<img class="col-lg-3 p-0 rounded-start" src={{ actuality.picture }}{# {% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% endif %} #} alt="">
 		<div class="col-lg-9 d-flex flex-column">
 			<h5 class="fs-2 m-2">{{ actuality.title }}</h5>
