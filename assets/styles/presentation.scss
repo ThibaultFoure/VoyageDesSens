@@ -7,11 +7,13 @@
 }
 
 .presentationImage {
-    object-fit: cover;
-    max-height: 60%;
+    object-fit     : cover;
+    object-position: 0 0;
+    max-height     : 200px;
+    max-width      : 200px;
 }
 
 .presentationTitle {
     border-bottom: 1px solid $secondary;
-    width: fit-content;
+    width        : fit-content;
 }
