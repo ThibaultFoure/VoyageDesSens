@@ -6,11 +6,15 @@
     border-radius: $spacing;
 }
 
-.presentationImage {
+.myJourney {
     object-fit     : cover;
-    object-position: 0 0;
-    max-height     : 200px;
-    max-width      : 200px;
+    object-position: top right;
+}
+
+.reflexologyPresentation {
+    object-fit     : cover;
+    object-position: top center;
+    max-height: 20;
 }
 
 .presentationTitle {
