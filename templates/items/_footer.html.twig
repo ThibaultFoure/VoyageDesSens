@@ -1,32 +1,33 @@
 <footer class="footer row m-0 footer-expand-lg bg-primary sticky-bottom justify-content-around align-items-center mt-5" id="footer">
 	<div class="networks d-flex flex-column flex-lg-row align-items-center col-3">
-		<span class="text-light fs-4 m-1">Mes réseaux :</span>
-		<div class="links d-flex w-50 justify-content-around my-1">
+		<div class="links d-flex w-50 justify-content-start my-1">
 			<a href="https://www.instagram.com/voyage_des_sens_reflexologie/" class="instagram" target="_blank">
-				<i class="bi bi-instagram fs-2"></i>
+				<i class="bi bi-instagram fs-2 mx-3"></i>
 			</a>
 			<a href="https://www.facebook.com/jenniferquenaultreflexologue" class="facebook" target="_blank">
-				<i class="bi bi-facebook fs-2"></i>
+				<i class="bi bi-facebook fs-2 mx-3"></i>
 			</a>
 		</div>
 	</div>
-	<img class="logoFooter m-2 col-3" src="{{ asset('build/images/VDS_Badge_Marigold.svg') }}" alt="Logo Voyage des sens bas de page">
-	<div class="d-flex flex-column justify-content-between align-items-center justify-content-center col-3">
-		{% if app.user %}
-			<div class="d-flex">
-				<a class="btn btn-secondary text-dark" href="{{ path('app_logout') }}">
-					<i class="bi bi-box-arrow-left me-2"></i>Déconnexion</a>
-				<a class="btn btn-secondary text-dark ms-2" href="{{ path('admin_index') }}">
-					<i class="bi bi-house"></i>
-				</a>
-			</div>
-		{% else %}
-			<a class="btn btn-secondary text-dark m-2" href="{{ path('login') }}">
-				<i class="bi bi-shield-lock-fill me-2"></i>Espace admin</a>
-		{% endif %}
-		<div class="d-flex flex-column flex-lg-row w-100 justify-content-between">
+	<a class="col-3 m-2 d-flex justify-content-center" href="{{ path('home') }}">
+		<img class="logoFooter" src="{{ asset('build/images/VDS_Badge_Marigold.svg') }}" alt="Logo Voyage des sens bas de page">
+	</a>
+	<div class="d-flex flex-column flex-lg-row justify-content-between align-items-center col-lg-3 col-12">
+		<div class="d-flex flex-column">
 			<a href="#" class="legal-notice m-1 text-center">Mentions légales</a>
 			<a href="#" class="general-conditions m-1 text-center">Conditions générales</a>
 		</div>
+		<a class="" href="{{ path('login') }}">Espace admin</a>
 	</div>
 </footer>
+
+{# {% if app.user %}
+	<div class="d-flex">
+		<a class="text-dark" href="{{ path('app_logout') }}">Déconnexion</a>
+		<a class="btn btn-secondary text-dark ms-2" href="{{ path('admin_index') }}">
+			<i class="bi bi-house"></i>
+		</a>
+	</div>
+{% else %}
+	<a class="m-2" href="{{ path('login') }}">Espace admin</a>
+{% endif %} #}
