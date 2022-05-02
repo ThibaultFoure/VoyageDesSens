@@ -23,10 +23,6 @@ class Session
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: "sessions")]
     private $category;
 
-    #[ORM\Column(type: "integer", nullable: true)]
-
-    private $price;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -64,18 +60,6 @@ class Session
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    public function getPrice(): ?int
-    {
-        return $this->price;
-    }
-
-    public function setPrice(?int $price): self
-    {
-        $this->price = $price;
 
         return $this;
     }

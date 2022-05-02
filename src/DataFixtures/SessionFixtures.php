@@ -18,7 +18,6 @@ class SessionFixtures extends Fixture
         ✨ La réflexologie permet au corps de retrouver un état équilibre et d\'évacuer le stress induit par cette pathologie. Elle permet également d\'aider notre corps à éliminer les toxines. ✨
         
         La réflexologie ne substitue pas aux traitements et au suivi médical. C\'est un complément pour trouver un mieux-être face à cette pathologie. ',
-            'price' => '',
             'category' => '1',
         ],
         [
@@ -36,7 +35,6 @@ class SessionFixtures extends Fixture
             - apporter du bien être durant le sevrage tabagique
             - diminuer les tensions physiques 
             - apporter un apaisement émotionnel',
-            'price' => '',
             'category' => '1',
         ],
         [
@@ -57,7 +55,6 @@ class SessionFixtures extends Fixture
             - apaiser les émotions
             
             La réflexologie ne substitue pas aux traitements et au suivi médical. C\'est un complément pour trouver un mieux-être face à cette pathologie. ',
-            'price' => '',
             'category' => '1',
         ],
         [
@@ -76,35 +73,62 @@ class SessionFixtures extends Fixture
             La réflexologie permet de soulager les douleurs occasionnées par cette pathologie et soulager les tensions émotionnelles du quotidien. Elle permet de détendre le corps et à la suite de plusieurs séances elle vous aidera à mieux gérer les douleurs au moment des règles. ✨✨
             
             La réflexologie ne substitue pas aux traitements et au suivi médical. C\'est un complément pour trouver un mieux-être face à cette pathologie.',
-            'price' => '',
             'category' => '1',
         ],
         [
             'title' => 'Bien-être du dos',
             'description' => 'Vous apprends à soulager votre dos.',
-            'price' => '',
             'category' => '3',
         ],
         [
             'title' => 'Mieux digérer',
             'description' => 'Vous donner les bons gestes en cas de digestion difficile.',
-            'price' => '',
             'category' => '3',
-        ], [
+        ],
+        [
             'title' => 'Mieux dormir',
             'description' => 'Vous donner les bons reflexes afin de mieux dormir.',
-            'price' => '',
             'category' => '3',
-        ], [
+        ],
+        [
             'title' => 'Anti stress',
             'description' => 'Vous apprendre à prendre du recul.',
-            'price' => '',
             'category' => '3',
+        ],
+        [
+            'title' => 'Vitalité',
+            'description' => '✨ Votre vitalité est malmenée par votre quotidien ? Résultat : la fatigue, le stress, le manque d\'énergie et la baisse de moral se font ressentir.
+            ❇️La cure Vitalité vous rendra votre dynamisme d\'antan pour profiter de la vie et prendre soin de vous durablement.',
+            'category' => '2',
+        ],
+        [
+            'title' => 'Détox',
+            'description' => '✨Boulot, métro, dodo ! Vous avez le sentiment d\'être intoxiqué par une vie trop chargée ...
+            ❇️La cure Détox est un véritable drainage des toxines et une remise en forme du corps et de l\'esprit. À faire à chaque début de saison ou après des situations de stress pour vous redonner de l\'éclat.',
+            'category' => '2',
+        ],
+        [
+            'title' => 'Anti-stress / Sommeil',
+            'description' => '✨Vous trouvez que vous dormez mal. Insomnies, sommeil agité, réveils fatigués...Le stress et les maux quotidiens peuvent s\'accumuler et perturber vos nuits. 
+            ❇️La cure anti-stress/sommeil vous aide à retrouver un rythme de vie harmonieux en resynchronisant votre horloge biologique. Vous repartirez apaisés et serein pour un équilibre retrouvé et des nuits enfin imperturbables.',
+            'category' => '2',
+        ],
+        [
+            'title' => 'Silhouette',
+            'description' => '✨Vous avez pris quelque kilos et vous aimeriez les perdre ? 
+            ❇️La cure Silhouette est une invitation à la minceur ! Les zones réflexes sélectionnées régulent la digestion, stimulent le corps et harmonisent le système nerveux pour retrouver votre ligne.',
+            'category' => '2',
+        ],
+        [
+            'title' => 'Silhouette',
+            'description' => '✨Vous avez des douleurs au niveau des cervicales, entre les omoplates ou encore au niveau des lombaires ? 
+            ❇️La cure bien-être du dos vous permet de retrouver un dos détendu et une posture plus équilibrée. Vous repartirez en forme pour mieux vous adapter aux différents besoins ergonomiques.',
+            'category' => '2',
         ],
     ];
     public function load(ObjectManager $manager): void
     {
-        foreach (self::SESSIONS as $key => $sessionDetails) {
+        foreach (self::SESSIONS as $sessionDetails) {
             $session = new Session();
             $session->setTitle($sessionDetails['title']);
             $session->setDescription($sessionDetails['description']);

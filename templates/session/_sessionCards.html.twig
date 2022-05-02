@@ -2,7 +2,10 @@
 	{% for category in categories %}
 		<div class="row sessionsMain justify-content-start bg-light rounded p-3 m-0">
 			<h2 class="categoryTitle text-primary p-0 fs-2">{{ category.title }}</h2>
-			<p class="p-2 m-0">{{ category.description|nl2br }}</p>
+			<p class="p-2 m-0">{{ category.priceDescription|nl2br }}</p>
+			{% if category.description is not empty %}
+				<p class="p-2 m-0">{{ category.description|nl2br }}</p>
+			{% endif %}
 			{% if category.sessions is not empty %}
 				<ul class="list-unstyled accordion accordion-flush p-2 m-0" id="accordionServices{{ category.id }}">
 				{% endif %}

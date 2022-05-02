@@ -27,6 +27,9 @@ class Category
     #[ORM\Column(type: "text", nullable: true)]
     private $description;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $priceDescription;
+
     public function __construct()
     {
         $this->sessions = new ArrayCollection();
@@ -85,6 +88,18 @@ class Category
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPriceDescription(): ?string
+    {
+        return $this->priceDescription;
+    }
+
+    public function setPriceDescription(?string $priceDescription): self
+    {
+        $this->priceDescription = $priceDescription;
 
         return $this;
     }
