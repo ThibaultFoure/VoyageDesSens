@@ -1,0 +1,24 @@
+<div class="row">
+	<table class="table bg-light col-8 w-75">
+		<thead class="text-primary">
+			<tr>
+				<td>Prestation</td>
+				<td>Prix</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for category in categories %}
+				<tr>
+					<td>{{ category.title }}</td>
+					<td>{{ category.priceDescription|nl2br }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<p class="col-3">
+		- séances enfants de 3 à 12 ans (45min) : 40 euros
+			- tarif étudiant -10% sur toutes prestations (sur présentation d'un justificatif)
+			Règlements acceptés par chèques ou espèces.
+			Séances remboursées par certaines mutuelles.
+	</p>
+</div>

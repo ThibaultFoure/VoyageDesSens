@@ -1,17 +1,15 @@
-Pour tarifs :
--séance personnalisée de réflexologie palmaire-plantaire-faciale-auriculaire-combinee (1h) : 50 euros
-- séances enfants de 3 à 12 ans (45min) : 40 euros
-- tarif étudiant -10% sur toutes prestations (sur présentation d'un justificatif)
+{% extends "base.html.twig" %}
 
--cure bien-être vitalité - Silhouette - Détox - Bien-être du dos - anti stress/sommeil (3 séances d'1h en 21 jours) : 130 euros
+{% block title %}Tarifs -
+	{{ parent() }}
+{% endblock %}
 
--Séance spécifique bien-être et sevrage tabagique- Bien-être et endometriose - Bien-être et fibromyalgie-bien-être et maladie de Crohn (3 séances d'1h sur 21 jours) :135 euros
-+ suivi d'une séance par mois si nécessaire 40 euros
+{% block stylesheets %}
+	{{ encore_entry_link_tags('price') }}
+{% endblock %}
 
--atelier d'auto réflexologie anti stress-Mieux dormir - mieux digérer - Bien-être du dos (3h) : 75 euros par personne
-Groupe de 4 à 6 personnes
-Kits contenants les instruments offerts
-
-Règlements acceptés par chèques ou espèces.
-
-Séances remboursées par certaines mutuelles.
+{% block body %}
+	<h1 class="pageTitle text-primary my-5 fs-1">Tarifs</h1>
+	{% include "price/_rate.html.twig" %}
+	{% include "price/_gift.html.twig" %}
+{% endblock %}

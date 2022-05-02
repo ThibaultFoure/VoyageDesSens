@@ -19,4 +19,12 @@ class SessionController extends AbstractController
             'categories' => $categoryRepository->findAll(),
         ]);
     }
+    
+    #[Route("/price", name: "price")]
+    public function gift(CategoryRepository $categoryRepository): Response
+    {
+        return $this->render('price/index.html.twig', [
+            'categories' => $categoryRepository->findAll(),
+        ]);
+    }
 }
