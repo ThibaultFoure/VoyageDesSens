@@ -8,11 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-#[Route("/prestations", name: "session_")]
 class SessionController extends AbstractController
 {
 
-    #[Route("/", name: "index")]
+    #[Route("/prestations", name: "session")]
     public function index(CategoryRepository $categoryRepository): Response
     {
         return $this->render('session/index.html.twig', [
@@ -20,7 +19,7 @@ class SessionController extends AbstractController
         ]);
     }
     
-    #[Route("/price", name: "price")]
+    #[Route("/prix", name: "price")]
     public function gift(CategoryRepository $categoryRepository): Response
     {
         return $this->render('price/index.html.twig', [

@@ -1,24 +1,36 @@
-<div class="row">
-	<table class="table bg-light col-8 w-75">
-		<thead class="text-primary">
+<div class="row table-responsive justify-content-between m-0 gap-4">
+	<table class="table table-striped bg-light shadow-sm m-0 p-0">
+		<thead class="text-primary fs-4">
 			<tr>
-				<td>Prestation</td>
-				<td>Prix</td>
+				<td class="border-0">
+					<span>Prestation</span>
+				</td>
+				<td class="border-0">
+					<span>Prix</span>
+				</td>
 			</tr>
 		</thead>
 		<tbody>
 			{% for category in categories %}
 				<tr>
-					<td>{{ category.title }}</td>
-					<td>{{ category.priceDescription|nl2br }}</td>
+					<td class="align-middle border-0">{{ category.title }}</td>
+					<td class="align-middle border-0">{{ category.priceDescription|nl2br }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-	<p class="col-3">
-		- séances enfants de 3 à 12 ans (45min) : 40 euros
-			- tarif étudiant -10% sur toutes prestations (sur présentation d'un justificatif)
+	<div class="priceInfos d-flex flex-column justify-content-between text-primary p-0 gap-3">
+		<span class="priceDetails bg-light shadow-sm p-3">
+			<i class="bi bi-info-circle"></i>
+			Tarif étudiant -10% sur toutes prestations (sur présentation d'un justificatif).
+		</span>
+		<span class="priceDetails bg-light shadow-sm p-3">
+			<i class="bi bi-info-circle"></i>
 			Règlements acceptés par chèques ou espèces.
+		</span>
+		<span class="priceDetails bg-light shadow-sm p-3">
+			<i class="bi bi-info-circle"></i>
 			Séances remboursées par certaines mutuelles.
-	</p>
+		</span>
+	</div>
 </div>
