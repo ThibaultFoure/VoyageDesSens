@@ -4,7 +4,7 @@
 			{{ actuality.title }}
 		</h2>
 		<div class="row m-0 justify-content-between gap-4 gap-lg-0">
-			<img class="col-lg-4 rounded p-0 align-self-start" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% endif %} alt="">
+			<img class="actuImg col-lg-4 rounded p-0 align-self-start" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% endif %} alt="">
 			<p class="col-lg-8 p-0 px-lg-3">{{ actuality.content|nl2br }}</p>
 		</div>
 	</div>

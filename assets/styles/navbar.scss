@@ -10,7 +10,7 @@
         background-size    : cover;
         background-position: center;
 
-        img {
+        .logoText {
             height: 50px;
         }
     }
@@ -47,5 +47,12 @@
             }
         }
 
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .navbar .topHeader .logoText {
+        height: 40px;
     }
 }
