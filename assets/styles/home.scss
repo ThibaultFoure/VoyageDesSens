@@ -6,6 +6,11 @@
     border-radius: $spacing;
 
     img {
-        object-fit: cover;
+        object-fit: contain;
+    }
+
+    .presentationTitle {
+        border-bottom: 1px solid $secondary;
+        width        : fit-content;
     }
 }

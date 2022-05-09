@@ -1,10 +1,11 @@
 {% for actuality in actualities %}
-	<div class="actuCard row flex-column flex-lg-row bg-light w-100">
-		<img class="col-lg-4 p-0 rounded-start" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% endif %} alt="">
-		<div class="col-lg-8 d-flex flex-column">
-			<h5 class="presentationTitle text-primary p-0 fs-2">{{ actuality.title }}</h5>
-			<p class="m-2">{{ actuality.content|nl2br }}</p>
-			<span class="m-2 text-secondary">{{ actuality.createdAt|date("D d M Y") }}</span>
+	<div class="actuCard bg-light p-3">
+		<h2 class="presentationTitle text-primary p-0 fs-2 mb-3">
+			{{ actuality.title }}
+		</h2>
+		<div class="row m-0 justify-content-between gap-4 gap-lg-0">
+			<img class="col-lg-4 rounded p-0 align-self-start" src={% if actuality.picture is defined %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% endif %} alt="">
+			<p class="col-lg-8 p-0 px-lg-3">{{ actuality.content|nl2br }}</p>
 		</div>
 	</div>
 {% endfor %}
