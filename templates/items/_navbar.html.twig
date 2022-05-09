@@ -15,11 +15,11 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-nav navbar-collapse justify-content-lg-center" id="navbarSupportedContent">
-			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('home') }}">Accueil</a>
-			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('presentation') }}">Présentation</a>
-			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('session') }}">Prestations</a>
-			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('price') }}">Tarifs</a>
-			<a class="nav-item nav-link fs-5 ms-lg-1 me-2" href="{{ path('contact') }}">Contact</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'home' ? 'active' : '' }}" href="{{ path('home') }}">Accueil</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'presentation' ? 'active' : '' }}" href="{{ path('presentation') }}">Présentation</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'session' ? 'active' : '' }}" href="{{ path('session') }}">Prestations</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'price' ? 'active' : '' }}" href="{{ path('price') }}">Tarifs</a>
+			<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'contact' ? 'active' : '' }}" href="{{ path('contact') }}">Contact</a>
 		</div>
 	</div>
 </nav>
