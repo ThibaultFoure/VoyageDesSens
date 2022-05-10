@@ -17,9 +17,11 @@
 			<a href="#" class="legal-notice m-1 text-center">Mentions légales</a>
 			<a href="#" class="general-conditions m-1 text-center">Conditions générales</a>
 		</div>
-		<a class="mt-1 mb-2 m-lg-0" href="{% if app.user %} {{ path('admin_index') }} {% else %} {{ path('admin_index') }} {% endif %}">Espace admin</a>
-		{% if app.user %}
-			<a href="{{ path('logout') }}">Déconnexion</a>
-		{% endif %}
+		<div class="d-flex flex-column">
+			<a class="m-1 text-center" href="{% if app.user %} {{ path('admin_index') }} {% else %} {{ path('admin_index') }} {% endif %}">Espace admin</a>
+			{% if app.user %}
+				<a class="m-1 text-center" href="{{ path('logout') }}">Déconnexion</a>
+			{% endif %}
+		</div>
 	</div>
 </footer>
