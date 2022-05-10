@@ -5,43 +5,33 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
-		<h1 class="my-3 text-center text-primary">Espace administrateur</h1>
-		<div class="row">
+	<h1 class="pageTitle text-primary my-5 fs-1">Espace administrateur</h1>
+	<section class="d-flex flex-column align-items-center">
+		<div class="row m-0 justify-content-center">
 			{% if error %}
-				<div class="alert alert-danger my-2 col-lg-6 offset-lg-3">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewbox="0 0 16 16" role="img" aria-label="Warning:">
-						<path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-					</svg>
+				<div class="alert alert-danger my-2 col-lg-6">
+					<i class="bi bi-exclamation-triangle-fill me-1"></i>
 					{{ error.messageKey|trans(error.messageData, 'security') }}
 				</div>
 			{% endif %}
 		</div>
-
-		<div class="card mb-5 col-lg-6 offset-lg-3 rounded-2">
-			<div class="card-text p-3 mb-2 rounded-top d-flex justify-content-center bg-primary text-light align-content-center">
-				<p class="mb-0">Connexion</p>
+		<div class="card mb-5 col-lg-6 rounded-2">
+			<div class="card-text text-center p-2 fs-4 rounded-top bg-primary text-light">
+				Connexion
 			</div>
-			<form action="{{ path('login') }}" method="post" class="d-flex flex-column mt-2 mb-4 container">
-				<div class="form-floating mb-4">
-					<input type="email" class="form-control" name="_username" id="username" placeholder="name@example.com">
+			<form action="{{ path('login') }}" method="post" class="d-flex flex-column my-2 p-3 gap-4">
+				<div class="form-floating">
+					<input type="email" class="form-control" name="_username" id="username" placeholder="Email">
 					<label for="floatingInput">Email</label>
 				</div>
-				<div class="form-floating mb-3">
-					<input type="password" class="form-control" name="_password" id="password" placeholder="Password">
+				<div class="form-floating">
+					<input type="password" class="form-control" name="_password" id="password" placeholder="Mot de passe">
 					<label for="floatingPassword">Mot de passe</label>
-					{# <p class="text-end">
-																<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
-															</p> #}
 				</div>
-				<button class="btn btn-secondary col-sm-4 offset-sm-4">Se connecter</button>
+				<button class="btn btn-secondary">Se connecter</button>
 				<input type="hidden" name="_target_path" value="{{ path('admin_index') }}"/>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			</form>
-			{# <p class="text-center">Pas de compte ?
-										<a href="{{ path('app_register') }}">Inscrivez-vous</a>
-									</p> #}
 		</div>
-
-	</main>
+	</section>
 {% endblock %}
