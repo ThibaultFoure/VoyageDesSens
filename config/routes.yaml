@@ -1,4 +1,4 @@
-app_logout:
+logout:
     path: /logout
     methods: GET
 controllers:
