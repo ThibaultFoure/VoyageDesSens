@@ -6,19 +6,19 @@
 
 {% block body %}
 	<h1 class="pageTitle text-primary my-5 fs-1">Espace administrateur</h1>
-	<section class="d-flex flex-column align-items-center">
-		<div class="row m-0 justify-content-center">
-			{% if error %}
-				<div class="alert alert-danger my-2 col-lg-6">
-					<i class="bi bi-exclamation-triangle-fill me-1"></i>
-					{{ error.messageKey|trans(error.messageData, 'security') }}
-				</div>
-			{% endif %}
-		</div>
-		<div class="card mb-5 col-lg-6 rounded-2">
-			<div class="card-text text-center p-2 fs-4 rounded-top bg-primary text-light">
-				Connexion
+	<div class="row m-0 justify-content-center">
+		{% if error %}
+			<div class="alert alert-danger my-2 col-lg-6">
+				<i class="bi bi-exclamation-triangle-fill me-1"></i>
+				{{ error.messageKey|trans(error.messageData, 'security') }}
 			</div>
+		{% endif %}
+	</div>
+	<section class="row flex-column align-items-center m-0">
+		<div class="loginPrompt mb-5 col-lg-6 col-12 p-0 bg-light rounded border border-2 border-secondary">
+			<h2 class="text-center p-2 fs-4 bg-primary text-light rounded-top w-100">
+				Connexion
+			</h2>
 			<form action="{{ path('login') }}" method="post" class="d-flex flex-column my-2 p-3 gap-4">
 				<div class="form-floating">
 					<input type="email" class="form-control" name="_username" id="username" placeholder="Email">
