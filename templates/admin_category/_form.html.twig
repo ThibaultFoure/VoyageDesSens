@@ -1,6 +1,12 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
-<a href="{{ path('admin_category_index') }}" class="btn btn-secondary mt-3 me-3 text-light">
-	<i class="bi bi-arrow-left-square test-light me-1"></i>Retour</a>
-<button class="btn btn-primary mt-3">{{ button_label|default('Sauvegarder') }}</button>
+<div class="d-flex justify-content-between">
+	<a href="{{ path('admin_category_index') }}" class="btn btn-secondary mt-3 me-3 text-light">
+		<i class="bi bi-arrow-left-circle test-light m-1"></i>Retour</a>
+	<button class="btn btn-success mt-3">
+		{% autoescape false %}
+			{{ button_label|default('<i class="bi bi-plus-circle m-1"></i>Ajouter') }}
+		{% endautoescape %}
+	</button>
+</div>
 {{ form_end(form) }}
