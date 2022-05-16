@@ -10,9 +10,7 @@
 	<h1 class="pageTitle text-primary my-5 fs-1">Modifier la catégorie</h1>
 	<div class="row justify-content-center m-0">
 		<div class="col-lg-8 fs-4 my-5 border border-3 border-secondary p-3 rounded bg-light">
-			{% autoescape "false" %}
-				{% include 'admin_category/_form.html.twig' with {'button_label' : '<i class="bi bi-pencil-square m-1"></i>Modifier'} %}
-			{% endautoescape %}
+			{% include 'admin_category/_form.html.twig' with {'button_label' : '<i class="bi bi-pencil-square m-1"></i>Modifier'} %}
 		</div>
 	</div>
 {% endblock %}

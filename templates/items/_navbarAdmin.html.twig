@@ -1,6 +1,5 @@
 {% extends "items/_navbar.html.twig" %}
 {% block navLinks %}
 	<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'admin_actuality_index' ? 'active' : '' }}" href="{{ path('admin_actuality_index') }}">Actualités</a>
-	<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'admin_category_index' ? 'active' : '' }}" href="{{ path('admin_category_index') }}">Catégories de prestations</a>
 	<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'admin_session_index' ? 'active' : '' }}" href="{{ path('admin_session_index') }}">Prestations</a>
 {% endblock %}

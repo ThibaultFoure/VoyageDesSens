@@ -1,6 +1,6 @@
 <form method="post" action="{{ path('admin_session_delete', {'id': session.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer \&#34;{{ session.title }}\&#34; de \&#34;{{ session.category.title }}\&#34; ?');">
 	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ session.id) }}">
-	<button class="btn btn-danger px-3 py-1 d-flex align-items-center justify-content-center">
-		<i class="bi bi-trash text-light m-1"></i>Supprimer
+	<button class="btn btn-danger p-2 d-flex align-items-center justify-content-center">
+		<i class="bi bi-trash text-light ms-1 me-2"></i>Supprimer
 	</button>
 </form>

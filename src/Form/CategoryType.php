@@ -19,7 +19,8 @@ class CategoryType extends AbstractType
             ])
             ->add('description', TextAreaType::class, [
                 'label' => 'Description',
-                'attr' => ['rows' => 8]
+                'attr' => ['rows' => 8],
+                'required' => false
             ]);
     }
 

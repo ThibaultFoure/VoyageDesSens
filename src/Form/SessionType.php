@@ -19,7 +19,6 @@ class SessionType extends AbstractType
             ->add('title', TextType::class, ['label' => 'Nom de la prestation'])
             ->add('description', TextAreaType::class, [
                 'label' => 'Description',
-                'required' => false,
                 'attr' => ['rows' => '8']
             ]);
     }
