@@ -29,8 +29,8 @@
 		</thead>
 		<tbody>
 			{% for category in categories %}
-				<tr class="text-light">
-					<td class="text-center align-middle text-primary fs-4">{{ category.title }}</td>
+				<tr class="bg-secondary">
+					<td class="align-middle fs-4">{{ category.title }}</td>
 					<td>
 						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3">
 							<a class="btn btn-success px-3 py-1 text-light d-flex align-items-center justify-content-center" href="{{ path('admin_session_new', {'id': category.id}) }}">

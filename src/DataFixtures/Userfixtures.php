@@ -22,7 +22,7 @@ class Userfixtures extends Fixture
         $user->setLastname('Quenault');
         $user->setFirstname('Jennifer');
         $user->setEmail('voyage@des.sens');
-        $user->setPassword($this->passwordHasher->hashPassword($user, 'admin'));
+        $user->setPassword($this->passwordHasher->hashPassword($user, 'Voyagedessens'));
         $user->setGender('Mme');
         $user->setRoles(['ROLE_ADMIN']);
         $manager->persist($user);

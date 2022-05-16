@@ -35,7 +35,7 @@ class AdminCategoryController extends AbstractController
             $entityManager->persist($category);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin_category/new.html.twig', [
@@ -61,7 +61,7 @@ class AdminCategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin_category/edit.html.twig', [
@@ -78,6 +78,6 @@ class AdminCategoryController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
     }
 }
