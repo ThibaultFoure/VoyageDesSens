@@ -1,18 +1,18 @@
 {% extends 'base-admin.html.twig' %}
 
 {% block title %}
-	Modifier une prestation - {{ parent() }}
-	
+	Modifier une prestation -
+	{{ parent() }}
+
 {% endblock %}
 
 {% block body %}
-	<main class="container my-5">
-		<h1 class="text-center d-flex flex-column">
-			<span>Modifier un service</span>
-			<span>{{ session.category.title }}</span>
-		</h1>
-		<div class="col-md-6 offset-md-3 fs-4 my-5 bg-light border border-primary p-2">
-			{{ include('admin_session/_form.html.twig') }}
+	<h1 class="pageTitle text-primary my-5 fs-1">
+		Modifier une prestation de "{{ session.category.title }}"
+	</h1>
+	<div class="row justify-content-center m-0">
+		<div class="col-lg-8 fs-4 border border-3 border-secondary p-3 rounded bg-light">
+			{% include 'admin_session/_form.html.twig'  with {'button_label' : '<i class="bi bi-pencil-square m-1"></i>Modifier'} %}
 		</div>
-	</main>
+	</div>
 {% endblock %}

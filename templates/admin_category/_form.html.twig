@@ -1,9 +1,9 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
 <div class="d-flex justify-content-between">
-<a href="{{ path('admin_session_index') }}" class="btn btn-secondary mt-3 me-3 text-light">
-	<i class="bi bi-arrow-left-square m-1"></i>Retour</a>
-	<button class="btn btn-success mt-3">
+	<a href="{{ path('admin_session_index') }}" class="btn btn-secondary text-light">
+		<i class="bi bi-arrow-left-square m-1"></i>Retour</a>
+	<button class="btn btn-success">
 		{% autoescape false %}
 			{{ button_label|default('<i class="bi bi-plus-circle m-1"></i>Ajouter') }}
 		{% endautoescape %}

@@ -9,7 +9,13 @@
         }}) }}
 {{ form_row(form.title) }}
 {{ form_row(form.description) }}
-<a href="{{ path('admin_session_index') }}" class="btn btn-secondary mt-3 me-3 text-light">
-	<i class="bi bi-arrow-left-square me-1"></i>Retour</a>
-<button class="btn btn-primary mt-3">{{ button_label|default('Sauvegarder') }}</button>
+<div class="d-flex justify-content-between">
+	<a href="{{ path('admin_session_index') }}" class="btn btn-secondary text-light">
+		<i class="bi bi-arrow-left-square m-1"></i>Retour</a>
+	<button class="btn btn-success">
+		{% autoescape false %}
+			{{ button_label|default('<i class="bi bi-plus-circle m-1"></i>Ajouter') }}
+		{% endautoescape %}
+	</button>
+</div>
 {{ form_end(form) }}
