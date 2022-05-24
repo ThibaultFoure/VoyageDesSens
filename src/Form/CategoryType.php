@@ -21,6 +21,10 @@ class CategoryType extends AbstractType
                 'label' => 'Description',
                 'attr' => ['rows' => 8],
                 'required' => false
+            ])
+            ->add('priceDescription', TextAreaType::class, [
+                'label' => 'Prix et informations additionnelles',
+                'attr' => ['rows' => 3],
             ]);
     }
 
