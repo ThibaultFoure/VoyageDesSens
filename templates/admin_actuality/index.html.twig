@@ -1,15 +1,45 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Admin Actualités -
+{% block title %}Admin actualités -
 	{{ parent() }}
 {% endblock %}
 
+
 {% block body %}
-	<main class="container my-5">
-		<h1 class="text-primary text-center my-3">Administration actualités</h1>
-		<a class="btn btn-primary fs-5" href="{{ path('admin_actuality_new') }}"><i class="bi bi-file-earmark-plus-fill me-2 fs-4"></i>Nouvelle actualité</a>
-		<div class="d-flex flex-column align-items-center">
-			{% include "admin_actuality/_adminActualityCards.html.twig" %}
-		</div>
-	</main>
+	<h1 class="pageTitle text-primary my-5 fs-1">
+		Administration actualitiés
+	</h1>
+	<table class="table table-hover bg-light border border-4 border-secondary">
+		<thead class="bg-light text-primary">
+			<tr>
+				<th class="align-middle fs-4">Actualités</th>
+				<th class="align-middle">
+					<div class="d-flex justify-content-lg-end flex-column flex-lg-row">
+						<a class="btn btn-success p-2 text-light d-flex align-items-center justify-content-center" href="{{ path('admin_actuality_new') }}">
+							<i class="bi bi-plus-circle ms-1 me-2"></i>Actualité
+						</a>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for actuality in actualities %}
+				<tr>
+					<td class="align-middle">{{ actuality.title }}</td>
+					<td>
+						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3">
+							<a class="btn btn-primary p-2 d-flex align-items-center justify-content-center" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">
+								<i class="bi bi-pencil-square ms-1 me-2"></i>Modifier
+							</a>
+							{{ include('admin_actuality/_delete_form.html.twig') }}
+						</div>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="9">Aucune actualité trouvée</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}
