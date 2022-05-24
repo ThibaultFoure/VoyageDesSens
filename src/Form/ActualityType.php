@@ -22,7 +22,7 @@ class ActualityType extends AbstractType
             ])
             ->add('pictureFile', VichImageType::class, [
                 'label' => 'Image',
-                'download_label' => '',
+                'download_label' => 'Télécharger l\'image',
                 'delete_label' => 'Supprimer l\'image',
                 'required' => false,
             ]);
