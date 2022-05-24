@@ -17,9 +17,9 @@
 	<table class="table table-hover bg-light">
 		<thead class="bg-light text-primary">
 			<tr>
-				<th class="fs-4">Catégories et prestations</th>
-				<th>
-					<div class="d-flex justify-content-end">
+				<th class="align-middle fs-4">Catégories et prestations</th>
+				<th class="align-middle">
+					<div class="d-flex justify-content-lg-end flex-column flex-lg-row">
 						<a class="btn btn-success p-2 text-light d-flex align-items-center justify-content-center" href="{{ path('admin_category_new') }}">
 							<i class="bi bi-plus-circle ms-1 me-2"></i>Catégorie 
 						</a>
@@ -29,8 +29,8 @@
 		</thead>
 		<tbody>
 			{% for category in categories %}
-				<tr class="bg-secondary">
-					<td class="align-middle fs-4">{{ category.title }}</td>
+				<tr class="bg-secondary bg-opacity-50">
+					<td class="align-middle fs-4 text-primary">{{ category.title }}</td>
 					<td>
 						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3">
 							<a class="btn btn-success p-2 text-light d-flex align-items-center justify-content-center" href="{{ path('admin_session_new', {'id': category.id}) }}">
