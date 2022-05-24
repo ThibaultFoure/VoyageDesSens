@@ -1,4 +1,12 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn btn-success"><i class="bi bi-save-fill me-2"></i>{{ button_label|default('Save') }}</button>
+{{ form_widget(form) }}
+<div class="d-flex justify-content-between">
+	<a href="{{ path('admin_actuality_index') }}" class="btn btn-secondary text-light">
+		<i class="bi bi-arrow-left-square m-1"></i>Retour</a>
+	<button class="btn btn-success">
+		{% autoescape false %}
+			{{ button_label|default('<i class="bi bi-plus-circle m-1"></i>Ajouter') }}
+		{% endautoescape %}
+	</button>
+</div>
 {{ form_end(form) }}
