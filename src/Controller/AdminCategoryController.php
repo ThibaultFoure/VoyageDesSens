@@ -35,6 +35,7 @@ class AdminCategoryController extends AbstractController
             $entityManager->persist($category);
             $entityManager->flush();
 
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Nouvelle catégorie ajoutée');
             return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -61,6 +62,7 @@ class AdminCategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Catégorie modifiée');
             return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -77,7 +79,7 @@ class AdminCategoryController extends AbstractController
             $entityManager->remove($category);
             $entityManager->flush();
         }
-
+        $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Catégorie supprimée');
         return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
     }
 }

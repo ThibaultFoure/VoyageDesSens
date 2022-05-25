@@ -40,6 +40,7 @@ class AdminSessionController extends AbstractController
             $entityManager->persist($session);
             $entityManager->flush();
 
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Nouvelle prestation ajoutée');
             return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -67,6 +68,7 @@ class AdminSessionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Prestation modifiée');
             return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -84,6 +86,7 @@ class AdminSessionController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Prestation supprimée');
         return $this->redirectToRoute('admin_session_index', [], Response::HTTP_SEE_OTHER);
     }
 }

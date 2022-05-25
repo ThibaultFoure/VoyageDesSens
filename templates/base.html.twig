@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
@@ -11,19 +12,17 @@
 
 		{{ encore_entry_link_tags('app') }}
 		{% block stylesheets %}{% endblock %}
+		{{ encore_entry_script_tags('app') }}
 
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
+		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
 		{% block navbar %}
 			{% include "items/_navbar.html.twig" %}
 		{% endblock %}
 		{% block header %}{% endblock %}
-		<main class="container"> {% block body %}{% endblock %}
-		
-		</main>
+		<main class="container"> {% block flash %}{% endblock %}{% block body %}{% endblock %}
+			</main>
 			{% block footer %}
 				{% include "items/_footer.html.twig" %}
 			{% endblock %}
