@@ -22,6 +22,8 @@ class Actuality
     private int $id;
 
     #[ORM\Column(type: "string", length: 120)]
+    #[Assert\Length(max: 120, maxMessage: 'Le titre doit pas faire plus de {{ limit }} caractères')]
+    #[Assert\NotBlank(message: 'Le titre ne peut pas être vide')]
     private ?string $title;
 
     #[ORM\Column(type: "text")]

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SessionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SessionRepository::class)]
 class Session
@@ -15,6 +16,8 @@ class Session
     private $id;
 
     #[ORM\Column(type: "string", length: 120)]
+    #[Assert\Length(max: 120, maxMessage: 'Le titre doit pas faire plus de {{ limit }} caractères')]
+    #[Assert\NotBlank(message: 'Le titre ne peut pas être vide')]
     private $title;
 
     #[ORM\Column(type: "text")]

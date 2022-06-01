@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Entity\Contact;
 
 class ContactType extends AbstractType
 {
@@ -20,6 +21,7 @@ class ContactType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Votre prénom',
+                    'class' => 'border-start-0',
                 ],
             ])
             ->add('lastname', TextType::class, [
@@ -32,6 +34,7 @@ class ContactType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Téléphone',
+                    'class' => 'border-start-0',
                     'type' => 'number',
                 ],
             ])
@@ -39,6 +42,7 @@ class ContactType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Adresse mail',
+                    'class' => 'border-start-0',
                     'class' => 'form-control',
                 ],
             ])
@@ -66,6 +70,8 @@ class ContactType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'data_class' => Contact::class,
+        ]);
     }
 }
