@@ -32,7 +32,7 @@
 				<tr class="bg-secondary bg-opacity-50">
 					<td class="align-middle fs-4 text-primary">{{ category.title }}</td>
 					<td>
-						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3">
+						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3 py-1">
 							<a class="btn btn-success p-2 text-light d-flex align-items-center justify-content-center" href="{{ path('admin_session_new', {'id': category.id}) }}">
 								<i class="bi bi-plus-circle ms-1 me-2"></i>Prestation
 							</a>
@@ -47,7 +47,7 @@
 					<tr>
 						<td class="align-middle ps-4">{{ session.title }}</td>
 						<td>
-							<div class="d-flex justify-content-end flex-column flex-lg-row gap-3">
+							<div class="d-flex justify-content-end flex-column flex-lg-row gap-3 py-1">
 								<a class="btn btn-primary p-2 d-flex align-items-center justify-content-center" href="{{ path('admin_session_edit', {'id': session.id}) }}">
 									<i class="bi bi-pencil-square ms-1 me-2"></i>Modifier
 								</a>
