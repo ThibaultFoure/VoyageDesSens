@@ -136,7 +136,6 @@ class SessionFixtures extends Fixture
             $manager->persist($session);
         }
 
-
         $manager->flush();
     }
 

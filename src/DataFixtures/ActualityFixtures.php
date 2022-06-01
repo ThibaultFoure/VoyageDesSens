@@ -23,8 +23,6 @@ class ActualityFixtures extends Fixture
             $manager->persist($actuality);
         }
 
-        $manager->persist($actuality);
-
         $manager->flush();
     }
 }
