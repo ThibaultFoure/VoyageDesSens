@@ -35,7 +35,7 @@ class AdminActualityController extends AbstractController
             $entityManager->persist($actuality);
             $entityManager->flush();
 
-            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Nouvelle actualité ajoutée');
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill mx-2"></i> Nouvelle actualité ajoutée');
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -62,7 +62,7 @@ class AdminActualityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Actualité modifiée');
+            $this->addFlash('success', '<i class="bi bi-check-circle-fill mx-2"></i> Actualité modifiée');
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -80,7 +80,7 @@ class AdminActualityController extends AbstractController
             $entityManager->remove($actuality);
             $entityManager->flush();
         }
-        $this->addFlash('success', '<i class="bi bi-check-circle-fill me-2"></i> Actualité supprimée');
+        $this->addFlash('danger', '<i class="bi bi-check-circle-fill mx-2"></i> Actualité supprimée');
         return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
     }
 }

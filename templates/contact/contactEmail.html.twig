@@ -1,0 +1,37 @@
+{% apply inline_css %}
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700 &display=swap');
+	body {
+		font-family: "Montserrat", sans-serif;
+		background-color: #fffdf9;
+		padding: 10px;
+	}
+	h1 {
+		color: #89381c;
+	}
+	h2 {
+		border-bottom: 2px solid #89381c;
+		width: fit-content;
+	}
+	p {
+		width: 80%;
+		border-radius: 8px;
+		padding: 12px;
+		margin-inline: auto;
+	}
+	li {
+		list-style: none;
+	}
+</style>
+<body>
+	<h1>Nouveau message depuis Voyage des sens</h1>
+	<h2>{{ contactFormData.reason }}</h2>
+	<ul>
+		<li>{{ contactFormData.firstname }}
+			{{ contactFormData.lastname }}</li>
+		<li>{{ contactFormData.mail }}</li>
+		<li>{{ contactFormData.phone }}</li>
+	</ul>
+	<p>{{ contactFormData.message }}</p>
+</body>
+{% endapply %}
