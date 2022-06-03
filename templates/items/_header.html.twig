@@ -1,9 +1,13 @@
 {% block stylesheets %}
 	{{ encore_entry_link_tags('header') }}
 {% endblock %}
-<img class="banner" src="{{ asset('build/images/header.jpg') }}" alt="">
-<h1 class="headerText w-75 text-primary d-flex flex-column align-items-center gap-4">
-	<span class="fs-2">Cabinet de réflexologie</span>
-	<span class="mainTitle text-secondary">Voyage des sens</span>
-	<i class="fs-2">À la rencontre du bien-être</i>
-</h1>
+<div class="banner row m-0 align-items-lg-center flex-column flex-lg-row align-items-center justify-content-around rounded border-bottom border-4 border-secondary">
+	<h1 class="headerText col-11 col-lg-4 d-flex flex-column text-primary align-items-center gap-4 border border-2 border-secondary rounded bg-light bg-opacity-75 p-3 mt-4 mt-lg-0">
+		<span class="fs-2">Cabinet de réflexologie</span>
+		<span class="mainTitle text-secondary">Voyage des sens</span>
+		<i class="fs-lg-2 fs-5 border-bottom border-primary">À la rencontre du bien-être</i>
+	</h1>
+	<div class="col-11 col-lg-4 px-0">
+		<img class="rounded w-100 my-4" src="{{ asset('build/images/header.jpg') }}" alt="">
+	</div>
+</div>

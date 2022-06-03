@@ -1,23 +1,29 @@
 @import "variables.scss";
 
 .banner {
-    height            : 300px;
-    width             : 100%;
-    object-fit        : cover;
-    object-position   : 50% 45%;
-    box-shadow        : 0px 0px 8px -2px black;
-    filter: blur(2px) sepia(100%);
+    box-shadow           : 0px 0px 8px -2px black;
+    background-image     : url(../images/VDS_Motif_Terre.svg);
+    background-size      : cover;
+    background-attachment: fixed;
+
+    h1 {
+        // width: fit-content;
+
+        .mainTitle {
+            font-size: 60px;
+        }
+    }
+
+    img {
+        max-height: 300px;
+        filter    : sepia(30%);
+        object-fit: cover;
+    }
 }
 
-.headerText {
-    position    : absolute;
-    top         : 7em;
-    margin-left : 50vw;
-    margin-right: 50vw;
-    transform   : translate(-50%, -50%);
-    text-shadow : 2px 2px 6px rgb(24, 24, 24);
+@media screen and (max-width: 480px) {
 
-    .mainTitle{
-        font-size: 70px;
+    .banner h1 .mainTitle {
+        font-size: 34px;
     }
 }
