@@ -7,23 +7,29 @@
     background-attachment: fixed;
 
     h1 {
-        // width: fit-content;
+        font-size  : clamp(20px, 2vw, 30px);
+        white-space: nowrap;
 
         .mainTitle {
-            font-size: 60px;
+            font-size  : clamp(36px, 3vw, 60px);
+            white-space: nowrap;
         }
     }
 
     img {
-        max-height: 300px;
-        filter    : sepia(30%);
         object-fit: cover;
+        width     : 50%;
+        height    : auto;
+    }
+
+    .tableHeader {
+        filter: sepia(30%);
     }
 }
 
-@media screen and (max-width: 480px) {
+// @media screen and (max-width: 540px) {
 
-    .banner h1 .mainTitle {
-        font-size: 34px;
-    }
-}
+//     .banner h1 .mainTitle {
+//         font-size: 34px;
+//     }
+// }

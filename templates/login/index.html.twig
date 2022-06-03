@@ -22,11 +22,11 @@
 			<form action="{{ path('login') }}" method="post" class="d-flex flex-column my-2 p-3 gap-4">
 				<div class="form-floating">
 					<input type="email" class="form-control" name="_username" id="username" placeholder="Email">
-					<label for="_username">Email</label>
+					<label for="username">Email</label>
 				</div>
 				<div class="form-floating">
 					<input type="password" class="form-control" name="_password" id="password" placeholder="Mot de passe">
-					<label for="_password">Mot de passe</label>
+					<label for="password">Mot de passe</label>
 				</div>
 				<button class="btn btn-secondary">Se connecter</button>
 				<input type="hidden" name="_target_path" value="{{ path('admin_index') }}"/>
