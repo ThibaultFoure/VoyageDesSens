@@ -35,7 +35,6 @@ class ContactType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Téléphone',
                     'class' => 'border-start-0',
-                    'type' => 'number',
                 ],
             ])
             ->add('mail', EmailType::class, [
@@ -51,9 +50,6 @@ class ContactType extends AbstractType
             ])
             ->add('reason', ChoiceType::class, [
                 'label' => 'Sujet de votre message',
-                'attr' => [
-                    'placeholder' => 'Sujet de votre message',
-                ],
                 'choices' => [
                     'Veuillez sélectionner un sujet' => 'Veuillez sélectionner un sujet',
                     'Demande de renseignement' => 'Demande de renseignements',

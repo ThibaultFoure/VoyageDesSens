@@ -42,7 +42,6 @@ class Contact
 
     #[ORM\Column(type: 'text')]
     #[Assert\NotBlank(message: 'Veuillez indiquer votre message')]
-
     private $message;
 
     public function getId(): ?int
