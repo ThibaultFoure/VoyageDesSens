@@ -23,7 +23,9 @@
 						</div>
 					</li>
 				{% endfor %}
-			</ul>
+				{% if category.sessions is not empty %}
+				</ul>
+			{% endif %}
 		</div>
 	{% endfor %}
 </div>
