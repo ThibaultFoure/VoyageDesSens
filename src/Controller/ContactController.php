@@ -22,7 +22,7 @@ class ContactController extends AbstractController
             $contactFormData = $form->getData();
             $message = (new Email())
                 ->from($contactFormData->getMail())
-                ->to('ton@gmail.com')
+                ->to($this->getParameter('mailer_to'))
                 ->subject('Nouveau mail depuis le site')
                 ->html($this->renderView('contact/contactEmail.html.twig', ['contactFormData' => $contactFormData]));
             $mailer->send($message);
