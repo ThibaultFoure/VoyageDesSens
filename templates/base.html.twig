@@ -16,12 +16,12 @@
 
 		{% block javascripts %}{% endblock %}
 	</head>
-	<body>
+	<body class="d-flex flex-column">
 		{% block navbar %}
 			{% include "items/_navbar.html.twig" %}
 		{% endblock %}
 		{% block header %}{% endblock %}
-		<main class="container">
+		<main class="mainContainer container">
 			{% block flash %}
 				{% for category, messages in app.flashes %}
 					{% for message in messages %}
