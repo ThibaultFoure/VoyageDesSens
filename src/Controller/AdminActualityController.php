@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Actuality;
 use App\Form\ActualityType;
 use App\Repository\ActualityRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,6 +58,7 @@ class AdminActualityController extends AbstractController
     public function edit(Request $request, Actuality $actuality, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ActualityType::class, $actuality);
+        $actuality->setUpdatedAt(new DateTimeImmutable('now'));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

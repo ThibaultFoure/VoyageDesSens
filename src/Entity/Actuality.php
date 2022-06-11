@@ -29,7 +29,7 @@ class Actuality
     #[ORM\Column(type: "text")]
     private ?string $content;
 
-    #[ORM\Column(type: "date")]
+    #[ORM\Column(type: "datetime")]
     private ?\DateTimeInterface $createdAt;
 
     #[Vich\UploadableField(mapping: "images", fileNameProperty: "picture")]
@@ -62,6 +62,13 @@ class Actuality
     public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 
     public function getId(): ?int
