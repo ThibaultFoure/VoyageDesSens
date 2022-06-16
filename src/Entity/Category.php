@@ -15,21 +15,21 @@ class Category
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
-    private $id;
+    private int $id;
 
     #[ORM\Column(type: "string", length: 120)]
     #[Assert\Length(max: 120, maxMessage: 'Le titre doit pas faire plus de {{ limit }} caractères')]
     #[Assert\NotBlank(message: 'Le titre ne peut pas être vide')]
-    private $title;
+    private string $title;
 
-    #[ORM\OneToMany(targetEntity: Session::class, mappedBy: "category")]
-    private $sessions;
+    #[ORM\OneToMany(targetEntity: Session::class, mappedBy: "category", cascade: ["persist", "remove"])]
+    private Collection $sessions;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private $description;
+    private string $description;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    private $priceDescription;
+    private string $priceDescription;
 
     public function __construct()
     {

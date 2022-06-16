@@ -13,18 +13,18 @@ class Session
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
-    private $id;
+    private int $id;
 
     #[ORM\Column(type: "string", length: 120)]
     #[Assert\Length(max: 120, maxMessage: 'Le titre doit pas faire plus de {{ limit }} caractères')]
     #[Assert\NotBlank(message: 'Le titre ne peut pas être vide')]
-    private $title;
+    private string $title;
 
     #[ORM\Column(type: "text")]
-    private $description;
+    private string $description;
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: "sessions")]
-    private $category;
+    private ?Category $category;
 
     public function getId(): ?int
     {
