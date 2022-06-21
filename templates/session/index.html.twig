@@ -10,5 +10,9 @@
 
 {% block body %}
 	<h1 class="pageTitle text-primary my-5 fs-1">Prestations</h1>
-	{% include "session/_sessionCards.html.twig" %}
+	<div class="row gap-5 m-0">
+		{% for category in categories %}
+			{% include "session/_sessionCard.html.twig" %}
+		{% endfor %}
+	</div>
 {% endblock %}
