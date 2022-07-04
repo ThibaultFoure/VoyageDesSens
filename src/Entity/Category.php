@@ -26,10 +26,10 @@ class Category
     private Collection $sessions;
 
     #[ORM\Column(type: "text", nullable: true)]
-    private string $description;
+    private ?string $description;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    private string $priceDescription;
+    private ?string $priceDescription;
 
     public function __construct()
     {
