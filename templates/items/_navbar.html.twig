@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-secondary navbar-light sticky-top p-0 d-flex flex-column">
 	<div class="topHeader bg-primary d-flex justify-content-center align-items-center p-3 w-100">
-		<a class="mx-3 bg-primary" href="{{ path('home') }}">
+		<a class="mx-3 bg-primary" href="{{ path('home_index') }}">
 			<img class="logoText" src="{{ asset('build/images/VDS_Horizontal_Complet_Marigold.png') }}" alt="Logo et texte header"/>
 		</a>
 		<div class="navbarText d-none d-lg-flex flex-column">
@@ -16,7 +16,7 @@
 		</button>
 		<div class="collapse navbar-nav navbar-collapse justify-content-lg-center" id="navbarSupportedContent">
 			{% block navLinks %}
-				<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'home' ? 'active' : '' }}" href="{{ path('home') }}">Accueil</a>
+				<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'home_index' ? 'active' : '' }}" href="{{ path('home_index') }}">Accueil</a>
 				<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'presentation' ? 'active' : '' }}" href="{{ path('presentation') }}">Présentation</a>
 				<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'session' ? 'active' : '' }}" href="{{ path('session') }}">Prestations</a>
 				<a class="nav-item nav-link fs-5 ms-lg-1 me-2 {{ app.request.get('_route') is same as 'price' ? 'active' : '' }}" href="{{ path('price') }}">Tarifs</a>

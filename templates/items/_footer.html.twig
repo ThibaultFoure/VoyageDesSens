@@ -9,13 +9,12 @@
 			</a>
 		</div>
 	</div>
-	<a class="col-3 m-2 d-flex justify-content-center" href="{{ path('home') }}">
+	<a class="col-3 m-2 d-flex justify-content-center" href="{{ path('home_index') }}">
 		<img class="logoFooter" src="{{ asset('build/images/VDS_Badge_Marigold.svg') }}" alt="Logo Voyage des sens bas de page">
 	</a>
 	<div class="d-flex flex-column flex-lg-row justify-content-between align-items-center col-lg-3 col-12">
 		<div class="d-flex flex-column">
-			<a href="#" class="legal-notice m-1 text-center">Mentions légales</a>
-			<a href="#" class="general-conditions m-1 text-center">Conditions générales</a>
+			<a href="{{ path('home_legal_notice') }}" class="legal-notice m-1 text-center">Mentions légales</a>
 		</div>
 		<div class="d-flex flex-column">
 			<a class="m-1 text-center" href="{{ path('admin_index') }}">Espace admin</a>
