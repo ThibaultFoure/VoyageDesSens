@@ -1,13 +1,18 @@
 {% extends "base.html.twig" %}
-{% block footer %}{% endblock %}
+{% block title %}
+	Erreur 404 -
+	{{ parent() }}
+{% endblock %}
 {% block body %}
 	<h1 class="pageTitle text-primary my-5 fs-1">
-		Erreur 404 !
+		Page non trouvée
 	</h1>
-	<h2 class="presentationTitle text-primary p-0 fs-2">
-		La page que vous recherchez n'existe pas :
-		<a href="{{ path('home_index') }}">
+	<section class="bg-light border border-4 rounded border-secondary p-3 m-0 shadow">
+		<p class="fs-5">
+			La page à laquelle vous essayez d'accéder n'existe pas.
+		</p>
+		<a class="btn btn-primary" href="{{ path('home_index') }}">
 			Retour à l'accueil
 		</a>
-	</h2>
+	</section>
 {% endblock %}
