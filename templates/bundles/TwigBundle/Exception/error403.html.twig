@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Erreur 403 -
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<h1 class="pageTitle text-primary my-5 fs-1">
+		Accès non autorisé
+	</h1>
+	<section class="bg-light border border-4 rounded border-secondary p-3 m-0 shadow">
+		<p class="fs-5">
+			Vous n'avez pas l'autorisation nécessaire pour accéder à cette page.
+		</p>
+		<a class="btn btn-primary" href="{{ path('home_index') }}">
+			Retour à l'accueil
+		</a>
+	</section>
+{% endblock %}
