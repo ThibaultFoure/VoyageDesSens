@@ -5,7 +5,7 @@
     border         : 4px solid $secondary;
     border-radius  : $spacing;
     border-collapse: separate;
-    width          : 60%;
+    width          : 65%;
 
     thead tr td span {
         width        : fit-content;
@@ -14,7 +14,7 @@
 }
 
 .priceInfos {
-    width: 35%;
+    width: 30%;
 
     .priceDetails {
         border       : 2px dashed $secondary;
