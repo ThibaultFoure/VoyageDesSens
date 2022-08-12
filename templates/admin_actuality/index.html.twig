@@ -20,12 +20,29 @@
 						</a>
 					</div>
 				</th>
+
 			</tr>
 		</thead>
 		<tbody>
-			{% for actuality in actualities %}
+			{% for actuality in actualities|sort %}
 				<tr>
-					<td class="align-middle">{{ actuality.title }}</td>
+					<td class="align-middle">
+						<div class="d-flex flex-column">
+							<span class="fs-5 p-1">
+								{{ actuality.title }}
+							</span>
+							<span class="ms-3 p-1">
+								Créée le :
+								{{ actuality.createdAt|date('d/m/Y à H:i') }}
+							</span>
+							{% if actuality.updatedAt %}
+								<span class="ms-3 p-1">
+									Dernière modification le :
+									{{ actuality.updatedAt|date('d/m/Y à H:i') }}
+								</span>
+							{% endif %}
+						</div>
+					</td>
 					<td>
 						<div class="d-flex justify-content-end flex-column flex-lg-row gap-3 py-1">
 							<a class="btn btn-primary p-2 d-flex align-items-center justify-content-center" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">
