@@ -3,11 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Actuality;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ActualityType extends AbstractType
@@ -16,9 +16,8 @@ class ActualityType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, ['label' => 'Titre'])
-            ->add('content', TextAreaType::class, [
+            ->add('content', CKEditorType::class, [
                 'label' => 'Contenu',
-                'attr' => ['rows' => 8],
             ])
             ->add('pictureFile', VichImageType::class, [
                 'label' => 'Image',
