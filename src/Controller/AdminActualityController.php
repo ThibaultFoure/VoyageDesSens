@@ -46,14 +46,6 @@ class AdminActualityController extends AbstractController
         ]);
     }
 
-    #[Route("/{id}", name: "show", methods: ["GET"])]
-    public function show(Actuality $actuality): Response
-    {
-        return $this->render('admin_actuality/show.html.twig', [
-            'actuality' => $actuality,
-        ]);
-    }
-
     #[Route("/{id}/modifier", name: "edit", methods: ["GET", "POST"])]
     public function edit(Request $request, Actuality $actuality, EntityManagerInterface $entityManager): Response
     {

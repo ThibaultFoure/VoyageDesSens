@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Session;
 use App\Form\SessionType;
-use App\Repository\SessionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,14 +47,6 @@ class AdminSessionController extends AbstractController
             'session' => $session,
             'form' => $form,
             'category' => $category,
-        ]);
-    }
-
-    #[Route("/{id}", name: "show", methods: ["GET"])]
-    public function show(Session $session): Response
-    {
-        return $this->render('admin_session/show.html.twig', [
-            'session' => $session,
         ]);
     }
 
