@@ -3,11 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Category;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CategoryType extends AbstractType
 {
@@ -17,14 +17,12 @@ class CategoryType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Nom de la catégorie'
             ])
-            ->add('description', TextAreaType::class, [
+            ->add('description', CKEditorType::class, [
                 'label' => 'Description',
-                'attr' => ['rows' => 8],
                 'required' => false
             ])
-            ->add('priceDescription', TextAreaType::class, [
+            ->add('priceDescription', CKEditorType::class, [
                 'label' => 'Prix et informations additionnelles',
-                'attr' => ['rows' => 3],
             ]);
     }
 

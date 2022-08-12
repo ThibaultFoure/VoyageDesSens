@@ -1,7 +1,7 @@
 <div class="row sessionsMain justify-content-start bg-light rounded p-3 m-0">
 	<h2 class="categoryTitle text-primary p-0 fs-2">{{ category.title }}</h2>
 	{% if category.description is defined %}
-		<p class="p-2 m-0">{{ category.description|nl2br }}</p>
+		<div class="p-2 m-0">{{ category.description|raw }}</div>
 	{% endif %}
 	{% if category.sessions is not empty %}
 		<ul class="list-unstyled accordion accordion-flush p-2 m-0" id="accordionServices{{ category.id }}">
@@ -16,7 +16,7 @@
 				</div>
 				<div id="collapse{{ session.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ session.id }}" data-bs-parent="#accordionServices{{ category.id }}">
 					<div class="accordion-body">
-						{{ session.description|nl2br }}
+						{{ session.description|raw }}
 					</div>
 				</div>
 			</li>
