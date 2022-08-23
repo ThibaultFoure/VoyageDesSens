@@ -9,7 +9,7 @@
 	<h1 class="pageTitle text-primary my-5 fs-1">
 		Administration actualités
 	</h1>
-	<table class="table table-hover bg-light border border-4 border-secondary">
+	<table class="table table-hover bg-light border border-4 border-secondary shadow">
 		<thead class="bg-light text-primary">
 			<tr>
 				<th class="align-middle fs-4">Actualités</th>
@@ -24,20 +24,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% for actuality in actualities|sort %}
+			{% for actuality in actualities %}
 				<tr>
 					<td class="align-middle">
 						<div class="d-flex flex-column">
 							<span class="fs-5 p-1">
 								{{ actuality.title }}
 							</span>
-							<span class="ms-3 p-1">
-								Créée le :
+							<span class="ms-3">
+								Ajoutée :
 								{{ actuality.createdAt|date('d/m/Y à H:i') }}
 							</span>
-							{% if actuality.updatedAt %}
-								<span class="ms-3 p-1">
-									Dernière modification le :
+							{% if actuality.updatedAt != actuality.createdAt %}
+								<span class="ms-3">
+									Dernière modification :
 									{{ actuality.updatedAt|date('d/m/Y à H:i') }}
 								</span>
 							{% endif %}
