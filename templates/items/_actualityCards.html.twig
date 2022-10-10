@@ -4,7 +4,13 @@
 			{{ actuality.title }}
 		</h2>
 		<div class="row m-0 justify-content-between gap-4 gap-lg-0">
-			<img class="actuImg col-lg-4 rounded p-0 align-self-start {% if actuality.picture is null %}h-25 p-5{% endif %}" src={% if actuality.picture is not null %} "{{ vich_uploader_asset(actuality, 'pictureFile') }}" {% else %} "{{ asset('build/images/VDS_Vertical_Couleur.png') }}" {% endif %} alt="">
+			{% if actuality.media is null %}
+				<img class="actuImg col-lg-4 rounded p-0 align-self-start" src="{{ asset('build/images/VDS_Vertical_Couleur.png') }}" alt="Logo Voyage des sens">
+			{% elseif actuality.isVideo %}
+				<video controls controlslist="nodownload disablePictureInPicture" class="actuImg col-lg-4 rounded p-0 align-self-start" src="{{ vich_uploader_asset(actuality, 'mediaFile') }}" alt="Vidéo de {{ actuality.title }}"></video>
+			{% else %}
+				<img class="actuImg col-lg-4 rounded p-0 align-self-start" src="{{ vich_uploader_asset(actuality, 'mediaFile') }}" alt="Photo de {{ actuality.title }}">
+			{% endif %}
 			<div class="col-lg-8 p-0 px-lg-3">{{ actuality.content|raw }}</div>
 		</div>
 	</div>

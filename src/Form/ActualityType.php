@@ -19,10 +19,10 @@ class ActualityType extends AbstractType
             ->add('content', CKEditorType::class, [
                 'label' => 'Contenu',
             ])
-            ->add('pictureFile', VichImageType::class, [
+            ->add('mediaFile', VichImageType::class, [
                 'label' => 'Image',
-                'download_label' => 'Télécharger l\'image',
-                'delete_label' => 'Supprimer l\'image',
+                'download_label' => 'Télécharger l\'image/vidéo',
+                'delete_label' => 'Supprimer l\'image/vidéo',
                 'required' => false,
             ]);
     }

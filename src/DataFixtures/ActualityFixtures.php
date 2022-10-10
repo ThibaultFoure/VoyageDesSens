@@ -19,6 +19,7 @@ class ActualityFixtures extends Fixture
             $actuality->setTitle($faker->words(2, true));
             $actuality->setCreatedAt($faker->dateTime());
             $actuality->setContent($faker->paragraph(6, true));
+            $actuality->setIsVideo(rand(0, 1));
             $manager->persist($actuality);
         }
 

@@ -32,15 +32,27 @@ class Actuality
     #[ORM\Column(type: "datetime")]
     private ?\DateTimeInterface $createdAt;
 
-    #[Vich\UploadableField(mapping: "images", fileNameProperty: "picture")]
-    #[Assert\File(maxSize: "1M", mimeTypes: ["image/jpeg", "image/png", "image/jpg"])]
-    private ?\Symfony\Component\HttpFoundation\File\File $pictureFile = null;
+    #[Vich\UploadableField(mapping: "medias", fileNameProperty: "media")]
+    #[Assert\File(maxSize: "50M", mimeTypes: [
+        "image/jpeg",
+        "image/png",
+        "image/jpg",
+        "video/mp4",
+        "video/webm",
+        "video/quicktime",
+        "video/x-msvideo",
+        "video/mpeg",
+    ])]
+    private ?\Symfony\Component\HttpFoundation\File\File $mediaFile = null;
 
     #[ORM\Column(type: "string", length: 255, nullable: true)]
-    private $picture;
+    private $media;
 
     #[ORM\Column(type: "datetime")]
     private ?DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column]
+    private ?bool $isVideo = null;
 
     public function __construct()
     {
@@ -48,17 +60,19 @@ class Actuality
         $this->createdAt = new DateTimeImmutable();
     }
 
-    public function setPictureFile(?File $pictureFile = null): void
+    public function setMediaFile(?File $mediaFile = null): void
     {
-        $this->pictureFile = $pictureFile;
-        if (null !== $pictureFile) {
+        $this->mediaFile = $mediaFile;
+        if (null !== $mediaFile) {
             $this->updatedAt = new DateTimeImmutable();
         }
     }
-    public function getPictureFile(): ?File
+
+    public function getMediaFile(): ?File
     {
-        return $this->pictureFile;
+        return $this->mediaFile;
     }
+
     public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
@@ -112,14 +126,26 @@ class Actuality
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getMedia(): ?string
     {
-        return $this->picture;
+        return $this->media;
     }
 
-    public function setPicture(?string $picture): self
+    public function setMedia(?string $media): self
     {
-        $this->picture = $picture;
+        $this->media = $media;
+
+        return $this;
+    }
+
+    public function isIsVideo(): ?bool
+    {
+        return $this->isVideo;
+    }
+
+    public function setIsVideo(bool $isVideo): self
+    {
+        $this->isVideo = $isVideo;
 
         return $this;
     }

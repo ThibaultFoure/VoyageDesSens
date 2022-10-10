@@ -5,9 +5,10 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/public/uploads/images
+/public/uploads/medias
 /var/
 /vendor/
+/.vscode
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###
