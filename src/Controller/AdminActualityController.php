@@ -32,7 +32,7 @@ class AdminActualityController extends AbstractController
         $form = $this->createForm(ActualityType::class, $actuality);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($actuality->getMediaFile()->getMimeType() === 'video/webm') {
+            if ($actuality->getMediaFile()->getMimeType() === 'video/webm' || $actuality->getMediaFile()->getMimeType() === 'video/mp4') {
                 $actuality->setIsVideo(1);
             } else {
                 $actuality->setIsVideo(0);
