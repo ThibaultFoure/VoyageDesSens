@@ -48,6 +48,7 @@ Encore
     .addStyleEntry('presentation', './assets/styles/presentation.scss')
     .addStyleEntry('price', './assets/styles/price.scss')
     .addStyleEntry('admin', './assets/styles/admin.scss')
+    .addStyleEntry('reset', './assets/styles/reset.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

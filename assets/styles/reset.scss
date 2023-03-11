@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+form > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing3;
+
+    label {
+        width: fit-content;
+        white-space: nowrap;
+    }
+}
